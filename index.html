@@ -592,6 +592,42 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     <div class="portfolio-slider-wrap">
       <div class="portfolio-track" id="portfolioTrack">
         
+        <div class="project-card" onclick="openPopupTruhlik()">
+          <div class="project-thumb" style="position:relative;overflow:hidden">
+            <img src="images/truhlik-01.jpg" alt="Můj Truhlík" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
+              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
+                          </div>
+          </div>
+          <div class="project-info">
+            <div class="project-name">Můj Truhlík — kompletní brand a mnohem více</div>
+                        <span class="project-chip">Full brand</span><span class="project-chip">E-commerce</span><span class="project-chip">Grafika</span>
+          </div>
+        </div>
+        <div class="project-card" onclick="openPopupEtna()">
+          <div class="project-thumb">
+            <img src="images/etna-01.jpg" alt="project" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
+              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
+                          </div>
+          </div>
+          <div class="project-info">
+            <div class="project-name">ETNA — světlo, které má systém</div>
+                        <span class="project-chip">Branding</span><span class="project-chip">Identity</span><span class="project-chip">Social media</span>
+          </div>
+        </div>
+        <div class="project-card" onclick="openPopupVotom()">
+          <div class="project-thumb" style="position:relative;overflow:hidden">
+            <img src="images/votom-01.jpg" alt="VOTOM Kafe" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
+              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
+                          </div>
+          </div>
+          <div class="project-info">
+            <div class="project-name">VOTOM Kafe — osobitý vizuál pro kavárnu</div>
+                        <span class="project-chip">Branding</span><span class="project-chip">Packaging</span><span class="project-chip">Logo</span>
+          </div>
+        </div>
         <div class="project-card" onclick="openPopup()">
           <div class="project-thumb">
             <img src="images/misc-03.jpg" alt="project" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
@@ -614,18 +650,6 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
           <div class="project-info">
             <div class="project-name">Poliklinika IPP — jednotná identita pro celé zdravotní centrum</div>
                         <span class="project-chip">Identity</span><span class="project-chip">Signage</span><span class="project-chip">Social media</span>
-          </div>
-        </div>
-        <div class="project-card" onclick="openPopupTruhlik()">
-          <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/truhlik-01.jpg" alt="Můj Truhlík" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
-            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
-              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
-          </div>
-          <div class="project-info">
-            <div class="project-name">Můj Truhlík — kompletní brand a mnohem více</div>
-                        <span class="project-chip">Full brand</span><span class="project-chip">E-commerce</span><span class="project-chip">Grafika</span>
           </div>
         </div>
         <div class="project-card" onclick="openPopupSkoda()">
@@ -652,30 +676,6 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
                         <span class="project-chip">Branding</span><span class="project-chip">Logo</span><span class="project-chip">Tiskoviny</span>
           </div>
         </div>
-        <div class="project-card" onclick="openPopupVotom()">
-          <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/votom-01.jpg" alt="VOTOM Kafe" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
-            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
-              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
-          </div>
-          <div class="project-info">
-            <div class="project-name">VOTOM Kafe — osobitý vizuál pro kavárnu</div>
-                        <span class="project-chip">Branding</span><span class="project-chip">Packaging</span><span class="project-chip">Logo</span>
-          </div>
-        </div>
-        <div class="project-card" onclick="openPopupRiverside()">
-          <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/riverside-01.jpg" alt="Riverside Bar" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
-            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
-              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
-          </div>
-          <div class="project-info">
-            <div class="project-name">Riverside Bar — svěží vizuál pro bar na vlnách Vltavy</div>
-                        <span class="project-chip">Identity</span><span class="project-chip">Logo</span><span class="project-chip">Grafika</span>
-          </div>
-        </div>
         <div class="project-card" onclick="openPopupMediestetik()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
             <img src="images/mediestetik-01.jpg" alt="Grafika a vizuální komunikace pro kliniku Mediestetik" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
@@ -688,16 +688,16 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
                         <span class="project-chip">Grafika</span><span class="project-chip">Social media</span><span class="project-chip">Tisk</span>
           </div>
         </div>
-        <div class="project-card" onclick="openPopupEtna()">
-          <div class="project-thumb">
-            <img src="images/etna-01.jpg" alt="project" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+        <div class="project-card" onclick="openPopupRiverside()">
+          <div class="project-thumb" style="position:relative;overflow:hidden">
+            <img src="images/riverside-01.jpg" alt="Riverside Bar" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
                           </div>
           </div>
           <div class="project-info">
-            <div class="project-name">ETNA — světlo, které má systém</div>
-                        <span class="project-chip">Branding</span><span class="project-chip">Identity</span><span class="project-chip">Social media</span>
+            <div class="project-name">Riverside Bar — svěží vizuál pro bar na vlnách Vltavy</div>
+                        <span class="project-chip">Identity</span><span class="project-chip">Logo</span><span class="project-chip">Grafika</span>
           </div>
         </div>
       </div>
