@@ -1418,15 +1418,11 @@ function submitForm(e){
   e.preventDefault();
   const form=e.target;
   const data=new FormData(form);
-  fetch('https://formspree.io/f/xpzgwvdp',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  fetch('https://formspree.io/f/xeevakbe',{method:'POST',body:data,headers:{'Accept':'application/json'}})
     .then(r=>{
       if(r.ok){document.getElementById('formContent').style.display='none';document.getElementById('formSuccess').style.display='block';}
       else{alert('Něco se pokazilo. Prosím napište přímo na info@michalkubik.cz');}
-    }).catch(()=>{
-      // Fallback - show success anyway for demo
-      document.getElementById('formContent').style.display='none';
-      document.getElementById('formSuccess').style.display='block';
-    });
+    }).catch(()=>{alert('Nepodařilo se odeslat. Prosím napište přímo na info@michalkubik.cz');});
 }
 
 // Nav active
