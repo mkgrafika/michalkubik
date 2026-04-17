@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--accentL);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:100px;margin-bottom:2rem}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-.hero h1{font-family:var(--serif);font-size:clamp(3.2rem,6vw,5.8rem);font-weight:700;line-height:1.08;letter-spacing:-.03em;color:var(--ink);margin-bottom:1.75rem}
+.hero h1{font-family:var(--serif);font-size:clamp(3.2rem,7vw,7rem);font-weight:700;line-height:1.05;letter-spacing:-.035em;color:var(--ink);margin-bottom:1.75rem}
 .hero h1 em{font-style:normal;color:var(--accent);font-weight:800;text-decoration:underline;text-decoration-color:var(--accentL);text-decoration-thickness:3px;text-underline-offset:5px}
 .hero-sub{font-size:1.05rem;color:var(--ink2);line-height:1.75;max-width:500px;margin-bottom:2.5rem}
 .hero-sub strong{color:var(--ink);font-weight:600}
@@ -328,7 +328,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   .form-row{grid-template-columns:1fr}
   .project-card{flex:0 0 75%}
   .testimonial{flex:0 0 75%}
-  .services-header{flex-direction:column;gap:1.5rem}
+  .services-header{flex-direction:column;gap:1.5rem;align-items:flex-start}
   .portfolio-cta-box{flex-direction:column;text-align:center}
 }
 
@@ -395,7 +395,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 
   /* Služby */
   .services{padding:3.5rem 5%}
-  .services-header{flex-direction:column;gap:1.5rem;margin-bottom:2rem}
+  .services-header{flex-direction:column;gap:1.5rem;margin-bottom:2rem;align-items:flex-start}
   .services-grid{gap:1rem}
   .service-card{padding:1.75rem 1.5rem;border-radius:16px}
   .service-title{font-size:1.15rem}
@@ -792,7 +792,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopup();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopup();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1518,7 +1518,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupTruhlik();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupTruhlik();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1581,7 +1581,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupIPP();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupIPP();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1634,7 +1634,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupSkoda();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupSkoda();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1696,7 +1696,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupSMMS();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupSMMS();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1759,7 +1759,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupVotom();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupVotom();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1821,7 +1821,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupRiverside();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupRiverside();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1886,7 +1886,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupMediestetik();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupMediestetik();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1946,7 +1946,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupEtna();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupEtna();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
