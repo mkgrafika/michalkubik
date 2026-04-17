@@ -351,7 +351,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   .hero{padding:80px 5% 0}
   .hero-inner{padding:2rem 0 3rem;gap:1.5rem}
   .hero-badge{font-size:.7rem;margin-bottom:1.25rem}
-  .hero h1{font-size:clamp(2rem,8vw,2.8rem);margin-bottom:1.25rem}
+  .hero h1{font-size:clamp(2.4rem,9vw,3.4rem);margin-bottom:1.25rem}
   .hero-sub{font-size:.93rem;margin-bottom:1.75rem}
   .hero-buttons{flex-direction:column;align-items:stretch;gap:.75rem}
   .btn-accent{width:100%;text-align:center;padding:.85rem 1.5rem;box-sizing:border-box}
@@ -429,13 +429,13 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   .cta-card-value{font-size:1rem}
   .cta-main-btn{padding:.95rem}
 
-  /* Formulář */
-  .form-overlay{padding:1rem}
-  .form-popup{padding:1.5rem 1.25rem;border-radius:20px;max-height:88vh}
+  /* Formulář — overlay scrolluje, popup bez omezení výšky */
+  .form-overlay{padding:1rem;align-items:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .form-popup{padding:1.5rem 1.25rem;border-radius:20px;max-height:none;margin:auto auto 1rem}
   .form-popup h2{font-size:1.4rem}
-  /* Popup projekty */
-  .popup-overlay{padding:1rem}
-  .popup{max-height:86vh;border-radius:20px}
+  /* Popup projekty — stejný přístup */
+  .popup-overlay{padding:1rem;align-items:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .popup{max-height:none;overflow-y:visible;border-radius:20px;margin:auto auto 1rem}
   .form-group input,.form-group select,.form-group textarea{font-size:16px}
 
   .slider-nav-arrow{display:none}
