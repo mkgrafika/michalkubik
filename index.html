@@ -348,14 +348,19 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 
   /* Hero */
   .hero{padding:80px 5% 0}
-  .hero-inner{padding:2rem 0 3rem;gap:2rem}
+  .hero-inner{padding:2rem 0 3rem;gap:1.5rem}
   .hero-badge{font-size:.7rem;margin-bottom:1.25rem}
   .hero h1{font-size:clamp(2rem,8vw,2.8rem);margin-bottom:1.25rem}
   .hero-sub{font-size:.93rem;margin-bottom:1.75rem}
-  .hero-buttons{flex-direction:column;align-items:flex-start;gap:.75rem}
-  .btn-accent{width:100%;text-align:center;padding:.85rem 1.5rem}
+  .hero-buttons{flex-direction:column;align-items:stretch;gap:.75rem}
+  .btn-accent{width:100%;text-align:center;padding:.85rem 1.5rem;box-sizing:border-box}
+  .btn-ghost2{align-self:center}
   .hero-pills{gap:.5rem}
   .hero-pill{font-size:.72rem;padding:.35rem .8rem}
+  /* Hero photo visible on mobile */
+  .hero-right{display:flex;justify-content:center}
+  .float-card{display:none}
+  .hero-photo-wrap{max-height:300px;border-radius:16px}
 
   /* Metrics */
   .metrics-section{padding:3rem 5%}
@@ -437,10 +442,22 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   [style*="position:absolute;top:2.75rem;right:-1.25rem"]{display:none !important}
 
   /* Ceník */
-  #cenik{padding:3.5rem 5%}
+  #cenik{padding:3.5rem 5% !important}
   #cenik .s-title{font-size:1.8rem}
   .pricing-grid{grid-template-columns:1fr}
   .pricing-card--featured{margin-top:8px}
+  .pricing-card{padding:1.5rem 1.25rem}
+
+  /* Klienti loga */
+  .clients-row{padding:1.25rem 1rem;gap:.75rem;justify-content:center}
+  .clients-label{width:100%;text-align:center;margin-bottom:.25rem}
+  .client-logo-box{padding:.35rem}
+
+  /* Proces — single column na velmi malých displejích */
+  .process-step-body{font-size:.83rem}
+
+  /* O mně */
+  .about-content h2{font-size:1.55rem}
 
   /* Footer */
   footer{padding:2.5rem 5% 1.5rem}
