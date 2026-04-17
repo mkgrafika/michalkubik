@@ -166,13 +166,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 /* PROCESS */
 .process{padding:6rem 6%}
 .process-inner{max-width:1200px;margin:0 auto}
-.process-header{max-width:560px;margin-bottom:4rem}
-.step{display:grid;grid-template-columns:80px 1fr 1.3fr;gap:2.5rem;padding:2.5rem 0;border-top:1px solid var(--line);align-items:start;position:relative}
-.step:last-child{border-bottom:1px solid var(--line)}
-.step-num{width:52px;height:52px;border-radius:50%;background:var(--accentLL);border:2px solid var(--accentL);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--accent);flex-shrink:0;transition:all .25s}
-.step:hover .step-num{background:var(--btn);color:white;border-color:var(--btn);box-shadow:0 4px 16px rgba(232,135,10,.3)}
-.step-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);padding-top:.65rem}
-.step-body{font-size:.9rem;color:var(--ink2);line-height:1.75}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;z-index:1}
+.process-step{display:flex;flex-direction:column;align-items:center}
+.process-step-num{width:48px;height:48px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 0 0 5px var(--accentLL),0 4px 16px rgba(61,82,160,.18);flex-shrink:0;position:relative;z-index:2}
+.process-step-num span{font-family:var(--serif);font-size:.95rem;font-weight:800;color:#fff}
+.process-step-card{background:var(--white);border-radius:20px;padding:1.5rem;border:1px solid var(--line);box-shadow:0 4px 24px rgba(61,82,160,.07);width:100%;box-sizing:border-box}
+.process-step-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.6rem}
+.process-step-body{font-size:.9rem;color:var(--ink2);line-height:1.75;margin:0}
+.process-line{position:absolute;top:24px;left:calc(12.5% - 1px);right:calc(12.5% - 1px);height:0;border-top:2px dashed var(--accentL);z-index:0;pointer-events:none}
 
 /* TESTIMONIALS */
 .testimonials{padding:6rem 6%;background:var(--warm)}
@@ -397,11 +398,10 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 
   /* Proces */
   .process{padding:3.5rem 5%}
-  .process-header{margin-bottom:2.5rem}
-  .step{grid-template-columns:52px 1fr;gap:1.25rem;padding:2rem 0}
-  .step-body{grid-column:2;font-size:.85rem}
-  .step-title{font-size:1.1rem}
-  .step-num{width:42px;height:42px;font-size:.85rem}
+  .process-steps{grid-template-columns:1fr 1fr;gap:1rem}
+  .process-line{display:none}
+  .process-step-card{padding:1.25rem}
+  .process-step-title{font-size:1rem}
 
   /* Reference */
   .testimonials{padding:3.5rem 5%}
@@ -818,44 +818,42 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 
 <!-- PROCESS -->
 <section class="process" id="process">
-  <div style="max-width:1200px;margin:0 auto;padding:5rem 6%">
+  <div class="process-inner">
     <div class="s-label">Proces</div>
     <h2 class="s-title" style="margin-bottom:.75rem">Jak <em>spolupráce</em> probíhá</h2>
-    <p class="s-sub" style="margin-top:.75rem;margin-bottom:3rem">Místo agentury s pěti lidmi a třemi předáváními — jeden člověk, který to celé drží.</p>
+    <p class="s-sub" style="margin-top:.75rem;margin-bottom:3.5rem">Místo agentury s pěti lidmi a třemi předáváními — jeden člověk, který to celé drží.</p>
     <div style="position:relative">
-      <div style="position:absolute;top:2.75rem;left:calc(12.5% + 22px);right:calc(12.5% + 22px);height:2px;border-top:2px dashed var(--accentL);z-index:0;pointer-events:none"></div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:start;position:relative;z-index:1">
-      <div style="background:var(--white);border-radius:20px;padding:1.75rem;border:1px solid var(--line);position:relative">
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">01</span>
+      <div class="process-line"></div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num"><span>01</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Seznámení a strategie</div>
+            <p class="process-step-body">Zavoláme si a probereme vaši značku, cíle a očekávání. Navrhnu řešení a strategii, která drží projekt ve správném směru po celou dobu spolupráce.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Seznámení<br>a strategie</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Zavoláme si a probereme vaši značku, cíle a očekávání. Navrhnu řešení a strategii, která drží projekt ve správném směru po celou dobu spolupráce.</p>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.75rem;border:1px solid var(--line);position:relative">
-        <div style="position:absolute;top:2.75rem;right:-1.25rem;width:1.25rem;height:2px;background:var(--accentL);z-index:2"></div>
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">02</span>
+        <div class="process-step">
+          <div class="process-step-num"><span>02</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Návrhy a koncepty</div>
+            <p class="process-step-body">Připravím několik různých návrhů, jak může vaše značka vizuálně fungovat. U každého vysvětlím, proč dává smysl. Společně vybereme ten nejlepší.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Návrhy<br>a koncepty</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Připravím několik různých návrhů, jak může vaše značka vizuálně fungovat. U každého vysvětlím, proč dává smysl a jak zapadá do vašeho byznysu. Společně vybereme ten nejlepší.</p>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.75rem;border:1px solid var(--line);position:relative">
-        <div style="position:absolute;top:2.75rem;right:-1.25rem;width:1.25rem;height:2px;background:var(--accentL);z-index:2"></div>
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">03</span>
+        <div class="process-step">
+          <div class="process-step-num"><span>03</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Doladění a výstupy</div>
+            <p class="process-step-body">Vybraný návrh dotáhnu do finální podoby a připravím všechny soubory včetně brand manuálu. Vše připravené pro online i tisk.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Doladění<br>a výstupy</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Vybraný návrh dotáhnu do finální podoby a připravím všechny soubory. Součástí je i brand manuál, který definuje, jak značku správně používat. Vše bude připravené pro online i tisk.</p>
-      </div>
-      <div style="background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:1.75rem;transition:transform .25s,box-shadow .25s">
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">04</span>
+        <div class="process-step">
+          <div class="process-step-num"><span>04</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Péče o značku</div>
+            <p class="process-step-body">Vytvořením loga to nekončí. Můžeme spolupracovat dlouhodobě a značku dál rozvíjet. Máte jednoho člověka, který ji zná a ví, kam ji posouvat.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Péče<br>o značku</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Vytvořením loga to nekončí. Můžeme spolupracovat dlouhodobě a značku dál rozvíjet. Máte tak jednoho člověka, který ji zná a ví, kam ji posouvat.</p>
       </div>
-    </div>
     </div>
   </div>
 </section>
