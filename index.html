@@ -48,7 +48,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--accentL);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:100px;margin-bottom:2rem}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-.hero h1{font-family:var(--serif);font-size:clamp(3.2rem,7vw,7rem);font-weight:700;line-height:1.05;letter-spacing:-.035em;color:var(--ink);margin-bottom:1.75rem}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:1.75rem}
 .hero h1 em{font-style:normal;color:var(--accent);font-weight:800;text-decoration:underline;text-decoration-color:var(--accentL);text-decoration-thickness:3px;text-underline-offset:5px}
 .hero-sub{font-size:1.05rem;color:var(--ink2);line-height:1.75;max-width:500px;margin-bottom:2.5rem}
 .hero-sub strong{color:var(--ink);font-weight:600}
@@ -1240,6 +1240,7 @@ function makeDragSlider(wrapSel, trackId) {
     if (e.type === 'touchmove' && isHorizontal === null) {
       var dx = Math.abs(clientX - startX);
       var dy = Math.abs(clientY - startY);
+      if (dx < 8 && dy < 8) return;
       isHorizontal = dx > dy;
       if (!isHorizontal) { isDragging = false; wrap.classList.remove('is-dragging'); return; }
     }
