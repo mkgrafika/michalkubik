@@ -8,6 +8,7 @@
 <link rel="icon" type="image/png" href="images/misc-01.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300;1,9..144,600&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300;1,9..144,600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -516,6 +517,10 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 .popup-footer-text p:first-child{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:white;margin-bottom:.3rem}
 .popup-footer-text p:last-child{font-size:.82rem;color:rgba(255,255,255,.4)}
 @media(max-width:700px){.popup-intro{grid-template-columns:1fr}.popup-photos{grid-template-columns:1fr}.popup-photo-stack{flex-direction:row}.popup-footer{flex-direction:column;text-align:center}.popup-footer .btn-accent{width:100%;box-sizing:border-box;white-space:normal}}
+/* Accessibility: white text on solid buttons — WCAG AA 4.5:1 (#AA5500 on white = 5.0:1) */
+.btn-accent,.cta-main-btn,.nav-cta,.nav-cta-mobile{background:#AA5500}
+.btn-accent:hover,.cta-main-btn:hover,.nav-cta:hover{background:#884300}
+.process-step-num{background:#AA5500;box-shadow:0 0 0 5px rgba(170,85,0,.15),0 4px 16px rgba(170,85,0,.2)}
 
 .slider-nav-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--white);border:1px solid var(--line);box-shadow:0 2px 12px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:background .2s,box-shadow .2s;color:var(--ink2)}
 .slider-nav-arrow:hover{background:var(--accent);color:white;box-shadow:0 4px 16px rgba(61,82,160,.25)}
@@ -619,7 +624,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         
         <div class="project-card" onclick="openPopupIPP()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img srcset="images/ipp-01-400.webp 420w, images/ipp-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/ipp-01.webp" alt="Poliklinika IPP" width="1400" height="1050" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/ipp-01-400.webp 420w, images/ipp-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/ipp-01.webp" alt="Poliklinika IPP" width="1400" height="1050" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -631,7 +636,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupEtna()">
           <div class="project-thumb">
-            <img srcset="images/etna-01-400.webp 420w, images/etna-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/etna-01.webp" alt="ETNA" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/etna-01-400.webp 420w, images/etna-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/etna-01.webp" alt="ETNA" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -643,7 +648,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopup()">
           <div class="project-thumb">
-            <img srcset="images/misc-03-400.webp 420w, images/misc-03.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/misc-03.webp" alt="Pivovar Holanďan" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/misc-03-400.webp 420w, images/misc-03.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/misc-03.webp" alt="Pivovar Holanďan" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -655,7 +660,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupVotom()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img srcset="images/votom-01-400.webp 420w, images/votom-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/votom-01.webp" alt="VOTOM Kafe" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/votom-01-400.webp 420w, images/votom-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/votom-01.webp" alt="VOTOM Kafe" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -667,7 +672,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupTruhlik()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img srcset="images/truhlik-01-400.webp 420w, images/truhlik-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/truhlik-01.webp" alt="Můj Truhlík" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/truhlik-01-400.webp 420w, images/truhlik-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/truhlik-01.webp" alt="Můj Truhlík" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -679,7 +684,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupMediestetik()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img srcset="images/mediestetik-01-400.webp 420w, images/mediestetik-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/mediestetik-01.webp" alt="Mediestetik" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/mediestetik-01-400.webp 420w, images/mediestetik-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/mediestetik-01.webp" alt="Mediestetik" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -691,7 +696,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupSkoda()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img srcset="images/skoda-01-400.webp 420w, images/skoda-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/skoda-01.webp" alt="Škoda Auto" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/skoda-01-400.webp 420w, images/skoda-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/skoda-01.webp" alt="Škoda Auto" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -703,7 +708,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupSMMS()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img srcset="images/smms-01-400.webp 420w, images/smms-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/smms-01.webp" alt="SMMS projekt" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/smms-01-400.webp 420w, images/smms-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/smms-01.webp" alt="SMMS projekt" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -715,7 +720,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupRiverside()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img srcset="images/riverside-01-400.webp 420w, images/riverside-01.webp 1400w" sizes="(max-width:600px) calc(100vw - 2rem), 420px" src="images/riverside-01.webp" alt="Riverside Bar" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/riverside-01-400.webp 420w, images/riverside-01.webp 1400w" sizes="(max-width: 600px) 90vw, 420px" src="images/riverside-01.webp" alt="Riverside Bar" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
             </div>
@@ -733,7 +738,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
       <div class="portfolio-cta-text">
         <h3 style="font-size:1.3rem">Váš projekt může vypadat stejně dobře.</h3>
       </div>
-      <button class="btn-accent" onclick="openForm()" style="background:var(--btn);color:#fff;border:none;padding:.85rem 1.75rem;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--sans)">Ozvěte se mi</button>
+      <button class="btn-accent" onclick="openForm()" style="background:#AA5500;color:#fff;border:none;padding:.85rem 1.75rem;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--sans)">Ozvěte se mi</button>
     </div>
   </div>
 </section>
