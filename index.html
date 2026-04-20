@@ -1141,7 +1141,10 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     <div id="formContent">
       <h2>Poptejte projekt</h2>
       <p>Vyplňte základní informace a já se vám ozvu do 24 hodin s nezávaznou nabídkou a návrhem dalšího postupu.</p>
-      <form onsubmit="submitForm(event)" action="https://formspree.io/f/info@michalkubik.cz" method="POST">
+      <form onsubmit="submitForm(event)" action="https://formsubmit.co/info@michalkubik.cz" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nová poptávka z webu — michalkubik.cz">
+        <input type="hidden" name="_autoresponse" value="Dobrý den, děkuji za vaši zprávu! Přijal jsem vaši poptávku a ozvu se vám do 24 hodin. — Michal Kubík | info@michalkubik.cz">
         <div class="form-row">
           <div class="form-group">
             <label>Jméno a příjmení *</label>
@@ -1445,7 +1448,7 @@ function submitForm(e){
   e.preventDefault();
   const form=e.target;
   const data=new FormData(form);
-  fetch('https://formspree.io/f/xeevakbe',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+  fetch('https://formsubmit.co/ajax/info@michalkubik.cz',{method:'POST',body:data,headers:{'Accept':'application/json'}})
     .then(r=>{
       if(r.ok){document.getElementById('formContent').style.display='none';document.getElementById('formSuccess').style.display='block';}
       else{alert('Něco se pokazilo. Prosím napište přímo na info@michalkubik.cz');}
