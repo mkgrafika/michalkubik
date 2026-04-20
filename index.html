@@ -4,14 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Michal Kubík — Grafický designér & Brand</title>
+<meta name="description" content="Michal Kubík — grafický designér a brand specialista z Prahy. Vytvářím vizuální identity, loga, weby a grafiku pro firmy, které chtějí vypadat profesionálně. Nezávazná poptávka zdarma.">
+<link rel="icon" type="image/png" href="images/misc-01.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300;1,9..144,600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300;1,9..144,600&display=fallback" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300;1,9..144,600&display=fallback"></noscript>
 <style>
+/* Fallback fonts with size-adjust to minimise font-swap CLS */
+@font-face{font-family:'DM Sans Fallback';src:local('Arial');size-adjust:103%;ascent-override:90%;descent-override:24%;line-gap-override:0%}
+@font-face{font-family:'Fraunces Fallback';src:local('Georgia');size-adjust:92%;ascent-override:87%;descent-override:27%;line-gap-override:0%}
 :root {
   --ink:#1E2235; --ink2:#2C3350; --muted:#606880;
   --accent:#3D52A0; --accent2:#2E3F7F; --accentL:#D0D8F0; --accentLL:#ECEFFE; --btn:#F07300; --btn2:#D86400;
   --bg:#F5F5F7; --warm:#EEEEF2; --card:#FFFFFF; --line:#E2E4EA; --white:#FFFFFF;
-  --serif:'Fraunces',Georgia,serif; --sans:'DM Sans',sans-serif;
+  --serif:'Fraunces','Fraunces Fallback',Georgia,serif; --sans:'DM Sans','DM Sans Fallback',Arial,sans-serif;
   --dark:#10121E; --navy:#1E2235;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -26,7 +33,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links{display:flex;gap:0;list-style:none;position:absolute;left:50%;transform:translateX(-50%)}
 .nav-links a{font-size:.82rem;font-weight:500;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s;padding:.4rem .85rem;border-radius:8px;display:block}
 .nav-links a:hover{color:#fff;background:rgba(255,255,255,.07)}
-.nav-cta{background:var(--btn);color:#fff;border:none;padding:.5rem 1.2rem;font-family:var(--sans);font-size:.82rem;font-weight:600;cursor:pointer;border-radius:100px;transition:background .2s,transform .15s;flex-shrink:0}
+.nav-cta{background:var(--btn);color:#1A0800;border:none;padding:.5rem 1.2rem;font-family:var(--sans);font-size:.82rem;font-weight:600;cursor:pointer;border-radius:100px;transition:background .2s,transform .15s;flex-shrink:0}
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.35rem;margin-left:.5rem}
 .nav-hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.7);border-radius:2px;transition:all .25s}
 .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -37,14 +44,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:.25rem;margin-bottom:1rem}
 .nav-mobile-menu a{display:block;font-size:.95rem;font-weight:500;color:rgba(255,255,255,.7);text-decoration:none;padding:.65rem 1rem;border-radius:10px;transition:all .2s}
 .nav-mobile-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
-.nav-mobile-menu .nav-cta-mobile{width:100%;background:var(--btn);color:#fff;border:none;padding:.8rem;font-family:var(--sans);font-size:.92rem;font-weight:600;cursor:pointer;border-radius:10px}
+.nav-mobile-menu .nav-cta-mobile{width:100%;background:var(--btn);color:#1A0800;border:none;padding:.8rem;font-family:var(--sans);font-size:.92rem;font-weight:600;cursor:pointer;border-radius:10px}
 .nav-cta:hover{background:var(--btn2);transform:translateY(-1px)}
 
 /* HERO */
 .hero{padding:88px 6% 0;min-height:100vh;display:flex;flex-direction:column;justify-content:center;background:var(--bg);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,#ECEFFE 0%,transparent 70%);pointer-events:none;z-index:0}
 .hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,#F0EEFF 0%,transparent 70%);pointer-events:none;z-index:0}
-.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center;padding:5rem 0}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:center;padding:5rem 0;min-height:max(660px,60vh)}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--accentL);color:var(--accent);font-size:.75rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:100px;margin-bottom:2rem}
 .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
@@ -53,7 +60,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero-sub{font-size:1.05rem;color:var(--ink2);line-height:1.75;max-width:500px;margin-bottom:2.5rem}
 .hero-sub strong{color:var(--ink);font-weight:600}
 .hero-buttons{display:flex;gap:1rem;align-items:center;margin-bottom:3rem}
-.btn-accent{background:var(--btn);color:#fff;padding:.9rem 2rem;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,transform .15s,box-shadow .2s;font-family:var(--sans)}
+.btn-accent{background:var(--btn);color:#1A0800;padding:.9rem 2rem;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,transform .15s,box-shadow .2s;font-family:var(--sans);border:none;cursor:pointer}
 .btn-accent:hover{background:var(--btn2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,135,10,.25)}
 .btn-ghost2{color:var(--ink);font-size:.9rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s;cursor:pointer;background:none;border:none;font-family:var(--sans)}
 .btn-ghost2:hover{gap:.7rem}
@@ -64,11 +71,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero-photo-wrap{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:3/4;max-height:520px;border:1px solid var(--line);box-shadow:0 24px 64px rgba(61,82,160,.1)}
 .hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .float-card{position:absolute;background:var(--white);border:1px solid var(--line);border-radius:16px;padding:1rem 1.25rem;box-shadow:0 8px 32px rgba(0,0,0,.08)}
-.float-card-1{bottom:2rem;left:-3rem;width:190px}
+.float-card-1{bottom:2rem;left:-3rem;width:fit-content}
 .float-card-2{top:2.5rem;right:-2.5rem;width:175px}
 .float-num{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--accent);line-height:1;margin-bottom:.2rem}
 .float-label{font-size:.72rem;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
-.float-stars{font-size:1rem;color:var(--accent);letter-spacing:.05em;margin-bottom:.3rem}
+.float-stars{font-size:1rem;color:var(--btn);letter-spacing:.05em;margin-bottom:.3rem}
 .float-sub{font-size:.68rem;color:var(--muted);font-weight:500}
 
 /* METRICS */
@@ -157,22 +164,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);opacity:0;transition:opacity .2s}
 
 
-.service-icon{width:44px;height:44px;background:var(--accentL);border-radius:12px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;font-size:1.2rem}
-.service-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:.75rem}
-.service-body{font-size:.88rem;color:var(--ink2);line-height:1.7}
+.service-card{display:grid;grid-template-columns:48px 1fr;grid-template-rows:auto auto;column-gap:.85rem;row-gap:.6rem;align-items:center}
+.service-icon{width:44px;height:44px;background:var(--accentL);border-radius:12px;display:flex;align-items:center;justify-content:center;grid-row:1;flex-shrink:0;color:var(--btn)}
+.service-title{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--ink);margin-bottom:0;align-self:center}
+.service-body{font-size:.88rem;color:var(--ink2);line-height:1.7;grid-column:1/-1}
 .services-note{margin-top:2.5rem;padding:1.5rem 2rem;background:rgba(61,82,160,.2);border:1px solid rgba(61,82,160,.3);border-radius:14px;display:flex;align-items:center;gap:1rem}
 .services-note-text{font-size:1rem;color:rgba(255,255,255,.6);font-style:italic;font-family:var(--serif)}
 
 /* PROCESS */
 .process{padding:6rem 6%}
 .process-inner{max-width:1200px;margin:0 auto}
-.process-header{max-width:560px;margin-bottom:4rem}
-.step{display:grid;grid-template-columns:80px 1fr 1.3fr;gap:2.5rem;padding:2.5rem 0;border-top:1px solid var(--line);align-items:start;position:relative}
-.step:last-child{border-bottom:1px solid var(--line)}
-.step-num{width:52px;height:52px;border-radius:50%;background:var(--accentLL);border:2px solid var(--accentL);display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:.95rem;font-weight:700;color:var(--accent);flex-shrink:0;transition:all .25s}
-.step:hover .step-num{background:var(--btn);color:white;border-color:var(--btn);box-shadow:0 4px 16px rgba(232,135,10,.3)}
-.step-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);padding-top:.65rem}
-.step-body{font-size:.9rem;color:var(--ink2);line-height:1.75}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;z-index:1}
+.process-step{display:flex;flex-direction:column;align-items:center}
+.process-step-num{width:48px;height:48px;background:var(--btn);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;box-shadow:0 0 0 5px rgba(240,115,0,.15),0 4px 16px rgba(240,115,0,.2);flex-shrink:0;position:relative;z-index:2}
+.process-step-num span{font-family:var(--serif);font-size:.95rem;font-weight:800;color:#1A0800}
+.process-step-card{background:var(--white);border-radius:20px;padding:1.5rem;border:1px solid var(--line);box-shadow:0 4px 24px rgba(61,82,160,.07);width:100%;box-sizing:border-box}
+.process-step-title{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.6rem}
+.process-step-body{font-size:.9rem;color:var(--ink2);line-height:1.75;margin:0}
+.process-line{position:absolute;top:24px;left:calc(12.5% - 1px);right:calc(12.5% - 1px);height:0;border-top:2px dashed var(--accentL);z-index:0;pointer-events:none}
 
 /* TESTIMONIALS */
 .testimonials{padding:6rem 6%;background:var(--warm)}
@@ -185,7 +194,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .testimonials-track{display:flex;gap:1.5rem;will-change:transform;transition:none}
 .testimonial{flex:0 0 calc(31% - 1rem);background:var(--white);border-radius:20px;padding:2.25rem 2rem;border:1px solid var(--line);display:flex;flex-direction:column;gap:1.25rem}
 .testimonial-stars{display:flex;gap:.25rem}
-.star{width:13px;height:13px;background:var(--accent);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.star{width:13px;height:13px;background:var(--btn);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
 .testimonial-text{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--ink);line-height:1.65;flex:1}
 .testimonial-footer{border-top:1px solid var(--line);padding-top:1rem;display:flex;align-items:center;gap:.85rem}
 .testimonial-name{font-size:.85rem;font-weight:600;color:var(--ink);margin-bottom:.15rem}
@@ -203,7 +212,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .pricing-card:hover{box-shadow:0 8px 32px rgba(61,82,160,.1);transform:translateY(-2px)}
 .pricing-card--featured{background:var(--ink);border-color:var(--ink);box-shadow:0 16px 48px rgba(30,34,53,.2)}
 .pricing-card--featured:hover{transform:translateY(-4px);box-shadow:0 24px 56px rgba(30,34,53,.28)}
-.pricing-badge{position:absolute;top:-14px;right:20px;background:var(--btn);color:#fff;font-size:.65rem;font-weight:700;padding:.35rem .9rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 12px rgba(232,135,10,.35)}
+.pricing-badge{position:absolute;top:-14px;right:20px;background:var(--btn);color:#1A0800;font-size:.65rem;font-weight:700;padding:.35rem .9rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 12px rgba(232,135,10,.35)}
 .pricing-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
 .pricing-label::before{content:'';width:14px;height:2px;background:var(--accentL);border-radius:2px;flex-shrink:0}
 .pricing-card--featured .pricing-label{color:var(--accentL)}
@@ -251,14 +260,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .cta-card-label{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
 .cta-card-value{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--ink)}
 .cta-card-arrow{font-size:1.3rem;color:var(--accent)}
-.cta-main-btn{display:block;background:var(--btn);color:white;text-align:center;padding:1.1rem 2rem;border-radius:100px;font-size:.95rem;font-weight:700;text-decoration:none;font-family:var(--sans);transition:background .2s,transform .15s,box-shadow .2s}
+.cta-main-btn{display:block;background:var(--btn);color:#1A0800;text-align:center;padding:1.1rem 2rem;border-radius:100px;font-size:.95rem;font-weight:700;text-decoration:none;font-family:var(--sans);transition:background .2s,transform .15s,box-shadow .2s;border:none;cursor:pointer}
 .cta-main-btn:hover{background:var(--btn2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,135,10,.3)}
 .cta-micro{text-align:center;font-size:.78rem;color:var(--muted)}
 
 /* CONTACT FORM POPUP */
 .form-overlay{display:none;position:fixed;inset:0;background:rgba(16,18,30,.7);z-index:1000;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(6px)}
 .form-overlay.open{display:flex}
-.form-popup{background:var(--white);border-radius:24px;max-width:580px;width:100%;padding:2.5rem;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.2)}
+.form-popup{background:var(--white);border-radius:24px;max-width:580px;width:100%;padding:2.5rem;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.2);max-height:90vh;overflow-y:auto}
 .form-close{position:absolute;top:1.25rem;right:1.25rem;width:36px;height:36px;border-radius:50%;background:var(--accentLL);border:none;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;color:var(--accent);transition:background .2s}
 .form-close:hover{background:var(--accentL)}
 .form-popup h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;letter-spacing:-.01em}
@@ -269,7 +278,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(61,82,160,.1)}
 .form-group textarea{height:100px;resize:vertical}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-submit{width:100%;background:var(--btn);color:white;border:none;padding:1rem;border-radius:100px;font-family:var(--sans);font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;margin-top:.5rem}
+.form-submit{width:100%;background:var(--btn);color:#1A0800;border:none;padding:1rem;border-radius:100px;font-family:var(--sans);font-size:.95rem;font-weight:700;cursor:pointer;transition:background .2s,transform .15s,box-shadow .2s;margin-top:.5rem}
 .form-submit:hover{background:var(--btn2);transform:translateY(-1px);box-shadow:0 6px 20px rgba(232,135,10,.3)}
 .form-promise{display:flex;align-items:center;gap:.6rem;font-size:.75rem;color:var(--muted);margin-top:.75rem;justify-content:center}
 .form-promise::before{content:'✓';color:var(--accent);font-weight:700}
@@ -284,17 +293,17 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:3rem;margin-bottom:3rem}
 .footer-logo{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
 .footer-logo em{font-style:italic;color:rgba(255,255,255,.35)}
-.footer-desc{font-size:.83rem;color:rgba(255,255,255,.3);line-height:1.65;margin-bottom:.75rem}
-.footer-ico{font-size:.72rem;color:rgba(255,255,255,.18)}
-.footer-col-title{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.25rem}
+.footer-desc{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.65;margin-bottom:.75rem}
+.footer-ico{font-size:.72rem;color:rgba(255,255,255,.4)}
+.footer-col-title{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:1.25rem}
 .footer-links{list-style:none}
 .footer-links li{margin-bottom:.55rem}
-.footer-links a{font-size:.85rem;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.footer-links a{font-size:.85rem;color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s}
 .footer-links a:hover{color:rgba(255,255,255,.9)}
-.footer-contact-val{font-size:.85rem;color:rgba(255,255,255,.4);margin-bottom:.5rem}
+.footer-contact-val{font-size:.85rem;color:rgba(255,255,255,.65);margin-bottom:.5rem}
 .footer-contact-val a{color:rgba(123,143,204,.8);text-decoration:none}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between}
-.footer-copy{font-size:.75rem;color:rgba(255,255,255,.2)}
+.footer-copy{font-size:.75rem;color:rgba(255,255,255,.45)}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .hero-badge{animation:fadeUp .5s .05s both}
@@ -326,7 +335,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   .form-row{grid-template-columns:1fr}
   .project-card{flex:0 0 75%}
   .testimonial{flex:0 0 75%}
-  .services-header{flex-direction:column;gap:1.5rem}
+  .services-header{flex-direction:column;gap:1.5rem;align-items:flex-start}
   .portfolio-cta-box{flex-direction:column;text-align:center}
 }
 
@@ -347,14 +356,20 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 
   /* Hero */
   .hero{padding:80px 5% 0}
-  .hero-inner{padding:2rem 0 3rem;gap:2rem}
+  .hero-inner{padding:2rem 0 3rem;gap:1.5rem}
   .hero-badge{font-size:.7rem;margin-bottom:1.25rem}
-  .hero h1{font-size:clamp(2rem,8vw,2.8rem);margin-bottom:1.25rem}
+  .hero h1{font-size:clamp(2.4rem,9vw,3.4rem);margin-bottom:1.25rem}
   .hero-sub{font-size:.93rem;margin-bottom:1.75rem}
-  .hero-buttons{flex-direction:column;align-items:flex-start;gap:.75rem}
-  .btn-accent{width:100%;text-align:center;padding:.85rem 1.5rem}
+  .hero-buttons{flex-direction:column;align-items:stretch;gap:.75rem}
+  .btn-accent{width:100%;text-align:center;padding:.85rem 1.5rem;box-sizing:border-box}
+  #cenik .btn-accent{width:auto;padding:1rem 2.5rem}
+  .btn-ghost2{align-self:center}
   .hero-pills{gap:.5rem}
   .hero-pill{font-size:.72rem;padding:.35rem .8rem}
+  /* Hero photo hidden on mobile */
+  .hero-right{display:none}
+  /* Remove animations on mobile so h1 is LCP candidate at FCP time */
+  .hero-badge,.hero h1,.hero-sub,.hero-buttons,.hero-pills{animation:none;opacity:1;transform:none}
 
   /* Metrics */
   .metrics-section{padding:3rem 5%}
@@ -390,18 +405,17 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 
   /* Služby */
   .services{padding:3.5rem 5%}
-  .services-header{flex-direction:column;gap:1.5rem;margin-bottom:2rem}
+  .services-header{flex-direction:column;gap:1.5rem;margin-bottom:2rem;align-items:flex-start}
   .services-grid{gap:1rem}
   .service-card{padding:1.75rem 1.5rem;border-radius:16px}
   .service-title{font-size:1.15rem}
 
   /* Proces */
   .process{padding:3.5rem 5%}
-  .process-header{margin-bottom:2.5rem}
-  .step{grid-template-columns:52px 1fr;gap:1.25rem;padding:2rem 0}
-  .step-body{grid-column:2;font-size:.85rem}
-  .step-title{font-size:1.1rem}
-  .step-num{width:42px;height:42px;font-size:.85rem}
+  .process-steps{grid-template-columns:1fr 1fr;gap:1rem}
+  .process-line{display:none}
+  .process-step-card{padding:1.25rem}
+  .process-step-title{font-size:1rem}
 
   /* Reference */
   .testimonials{padding:3.5rem 5%}
@@ -425,9 +439,13 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   .cta-card-value{font-size:1rem}
   .cta-main-btn{padding:.95rem}
 
-  /* Formulář */
-  .form-popup{padding:1.75rem 1.25rem;border-radius:20px}
+  /* Formulář — overlay scrolluje, popup bez omezení výšky */
+  .form-overlay{padding:1rem;align-items:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .form-popup{padding:1.5rem 1.25rem;border-radius:20px;max-height:none;margin:auto auto 1rem}
   .form-popup h2{font-size:1.4rem}
+  /* Popup projekty — stejný přístup */
+  .popup-overlay{padding:1rem;align-items:flex-start;overflow-y:auto;-webkit-overflow-scrolling:touch}
+  .popup{max-height:none;overflow-y:visible;border-radius:20px;margin:auto auto 1rem}
   .form-group input,.form-group select,.form-group textarea{font-size:16px}
 
   .slider-nav-arrow{display:none}
@@ -437,10 +455,22 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   [style*="position:absolute;top:2.75rem;right:-1.25rem"]{display:none !important}
 
   /* Ceník */
-  #cenik{padding:3.5rem 5%}
+  #cenik{padding:3.5rem 5% !important}
   #cenik .s-title{font-size:1.8rem}
   .pricing-grid{grid-template-columns:1fr}
   .pricing-card--featured{margin-top:8px}
+  .pricing-card{padding:1.5rem 1.25rem}
+
+  /* Klienti loga */
+  .clients-row{padding:1.25rem 1rem;gap:.75rem;justify-content:center}
+  .clients-label{width:100%;text-align:center;margin-bottom:.25rem}
+  .client-logo-box{padding:.35rem}
+
+  /* Proces — single column na velmi malých displejích */
+  .process-step-body{font-size:.83rem}
+
+  /* O mně */
+  .about-content h2{font-size:1.55rem}
 
   /* Footer */
   footer{padding:2.5rem 5% 1.5rem}
@@ -461,7 +491,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 .popup-banner-img{width:100%;height:100%;object-fit:cover}
 .popup-banner-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(16,18,30,.92) 0%,rgba(16,18,30,.15) 60%,transparent 100%)}
 .popup-banner-content{position:absolute;bottom:0;left:0;right:0;padding:2rem 2.5rem}
-.popup-banner-chip{display:inline-block;background:var(--btn);color:white;font-size:.7rem;font-weight:700;padding:.3rem .85rem;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.65rem}
+.popup-banner-chip{display:inline-block;background:var(--btn);color:#1A0800;font-size:.7rem;font-weight:700;padding:.3rem .85rem;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.65rem}
 .popup-banner h2{font-family:var(--serif);font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:700;color:white;line-height:1.2;max-width:580px}
 .popup-close{position:absolute;top:1.25rem;right:1.25rem;z-index:20;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.2);cursor:pointer;font-size:1rem;display:flex;align-items:center;justify-content:center;color:white;transition:background .2s;line-height:1}
 .popup-close:hover{background:rgba(255,255,255,.3)}
@@ -491,7 +521,8 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 .popup-footer{background:var(--ink);border-radius:20px;padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;margin-top:2rem}
 .popup-footer-text p:first-child{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:white;margin-bottom:.3rem}
 .popup-footer-text p:last-child{font-size:.82rem;color:rgba(255,255,255,.4)}
-@media(max-width:700px){.popup-intro{grid-template-columns:1fr}.popup-photos{grid-template-columns:1fr}.popup-photo-stack{flex-direction:row}.popup-footer{flex-direction:column;text-align:center}}
+@media(max-width:700px){.popup-intro{grid-template-columns:1fr}.popup-photos{grid-template-columns:1fr}.popup-photo-stack{flex-direction:row}.popup-footer{flex-direction:column;text-align:center}.popup-footer .btn-accent{width:100%;box-sizing:border-box;white-space:normal}}
+
 
 .slider-nav-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--white);border:1px solid var(--line);box-shadow:0 2px 12px rgba(0,0,0,.1);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;transition:background .2s,box-shadow .2s;color:var(--ink2)}
 .slider-nav-arrow:hover{background:var(--accent);color:white;box-shadow:0 4px 16px rgba(61,82,160,.25)}
@@ -507,7 +538,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" href="#" style="display:flex;align-items:center"><img src="images/misc-01.png" alt="MK logo" style="height:64px;width:auto" /></a>
+    <a class="nav-logo" href="#" style="display:flex;align-items:center"><img src="images/misc-01.webp" alt="MK logo" width="64" height="64" style="height:64px;width:auto" fetchpriority="high" /></a>
     <ul class="nav-links">
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#sluzby">Služby</a></li>
@@ -516,7 +547,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <button class="nav-cta" onclick="openForm()">Nezávazně poptat</button>
-    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Otevřít menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="nav-mobile-menu" id="mobileMenu">
@@ -530,15 +561,16 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   <button class="nav-cta-mobile" onclick="toggleMenu();openForm()">Nezávazně poptat →</button>
 </div>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-left">
-      <div class="hero-badge">Grafický designér & Branding</div>
+      <div class="hero-badge">Grafický design & branding</div>
       <h1>Vizuální identita,<br>která vaší firmě<br><em>přinese zákazníky.</em></h1>
-      <p class="hero-sub">Navrhuju loga, vizuální identity a grafiku pro firmy, které chtějí nejen být vidět, ale i působit profesionálně. Pracujete přímo se mnou, bez prostředníků, od prvního návrhu až po finální výstupy.</p>
+      <p class="hero-sub">Navrhuju loga, vizuální identity a grafiku pro firmy, které chtějí nejen být vidět, ale i působit profesionálně. Komunikace probíhá přímo se mnou, bez prostředníků, od prvního návrhu až po finální výstupy.</p>
       <div class="hero-buttons">
-        <a href="#portfolio" class="btn-accent">Nezávazně poptat</a>
+        <button class="btn-accent" onclick="openForm()">Nezávazně poptat</button>
         <a href="#portfolio" class="btn-ghost2" style="cursor:pointer;text-decoration:none">Prohlédnout projekty</a>
       </div>
       <div class="hero-pills">
@@ -549,7 +581,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     </div>
     <div class="hero-right">
       <div class="hero-photo-wrap">
-        <img src="images/misc-02.png" alt="Michal Kubík" />
+        <img src="images/michalkubik_A.webp" alt="Michal Kubík" width="700" height="700" fetchpriority="high" />
       </div>
       <div class="float-card float-card-1">
         <div class="float-num">120+</div>
@@ -572,7 +604,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     </div>
     <div class="metrics-grid">
       <div class="metric-card"><div class="metric-num">10+</div><div class="metric-label">let praxe</div><div style="font-size:.82rem;color:var(--muted);margin-top:.6rem;line-height:1.55">Grafice se věnuji přes 10 let — viděl jsem, co funguje a co ne.</div></div>
-      <div class="metric-card"><div class="metric-num">120+</div><div class="metric-label">projektů</div><div style="font-size:.82rem;color:var(--muted);margin-top:.6rem;line-height:1.55">Přes 120 dokončených — od loga až po kompletní redesign firmy.</div></div>
+      <div class="metric-card"><div class="metric-num">120+</div><div class="metric-label">projektů</div><div style="font-size:.82rem;color:var(--muted);margin-top:.6rem;line-height:1.55">Přes 120 dokončených projektů — od loga až po redesign firmy.</div></div>
       <div class="metric-card"><div class="metric-num">24h</div><div class="metric-label">odpověď</div><div style="font-size:.82rem;color:var(--muted);margin-top:.6rem;line-height:1.55">Do 24 hodin víte, na čem jste. Žádné čekání týden po odeslání.</div></div>
       <div class="metric-card"><div class="metric-num">95 %</div><div class="metric-label">stálých klientů</div><div style="font-size:.82rem;color:var(--muted);margin-top:.6rem;line-height:1.55">95 % klientů se mnou spolupracuje opakovaně. To nemůže být náhoda.</div></div>
     </div>
@@ -592,112 +624,112 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     <div class="portfolio-slider-wrap">
       <div class="portfolio-track" id="portfolioTrack">
         
-        <div class="project-card" onclick="openPopupTruhlik()">
+        <div class="project-card" onclick="openPopupIPP()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/truhlik-01.jpg" alt="Můj Truhlík" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/ipp-01-400.webp 420w, images/ipp-01-1100.webp 1100w, images/ipp-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/ipp-01-400.webp" alt="Poliklinika IPP" width="1400" height="1050" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
+            </div>
           </div>
           <div class="project-info">
-            <div class="project-name">Můj Truhlík — kompletní brand a mnohem více</div>
-                        <span class="project-chip">Full brand</span><span class="project-chip">E-commerce</span><span class="project-chip">Grafika</span>
+            <div class="project-name">Poliklinika IPP — jednotná identita pro celé zdravotní centrum</div>
+            <span class="project-chip">Identity</span><span class="project-chip">Signage</span><span class="project-chip">Social media</span>
           </div>
         </div>
         <div class="project-card" onclick="openPopupEtna()">
           <div class="project-thumb">
-            <img src="images/etna-01.jpg" alt="project" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/etna-01-400.webp 420w, images/etna-01-1100.webp 1100w, images/etna-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/etna-01-400.webp" alt="ETNA" width="1400" height="1050" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
+            </div>
           </div>
           <div class="project-info">
             <div class="project-name">ETNA — světlo, které má systém</div>
-                        <span class="project-chip">Branding</span><span class="project-chip">Identity</span><span class="project-chip">Social media</span>
-          </div>
-        </div>
-        <div class="project-card" onclick="openPopupVotom()">
-          <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/votom-01.jpg" alt="VOTOM Kafe" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
-            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
-              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
-          </div>
-          <div class="project-info">
-            <div class="project-name">VOTOM Kafe — osobitý vizuál pro kavárnu</div>
-                        <span class="project-chip">Branding</span><span class="project-chip">Packaging</span><span class="project-chip">Logo</span>
+            <span class="project-chip">Branding</span><span class="project-chip">Identity</span><span class="project-chip">Social media</span>
           </div>
         </div>
         <div class="project-card" onclick="openPopup()">
           <div class="project-thumb">
-            <img src="images/misc-03.jpg" alt="project" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/misc-03-400.webp 420w, images/misc-03-1100.webp 1100w, images/misc-03.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/misc-03-400.webp" alt="Pivovar Holanďan" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
+            </div>
           </div>
           <div class="project-info">
-            <div class="project-name">Vizuální identita & fotografie pro Pivovar Holanďan</div>
-                        <span class="project-chip">Branding</span><span class="project-chip">Fotografie</span><span class="project-chip">Tiskoviny</span>
+            <div class="project-name">Pivovar Holanďan — vizuální identita a fotografie</div>
+            <span class="project-chip">Branding</span><span class="project-chip">Fotografie</span><span class="project-chip">Tiskoviny</span>
           </div>
         </div>
-        <div class="project-card" onclick="openPopupIPP()">
+        <div class="project-card" onclick="openPopupVotom()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/ipp-01.jpg" alt="Poliklinika IPP" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/votom-01-400.webp 420w, images/votom-01-1100.webp 1100w, images/votom-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/votom-01-400.webp" alt="VOTOM Kafe" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
+            </div>
           </div>
           <div class="project-info">
-            <div class="project-name">Poliklinika IPP — jednotná identita pro celé zdravotní centrum</div>
-                        <span class="project-chip">Identity</span><span class="project-chip">Signage</span><span class="project-chip">Social media</span>
+            <div class="project-name">VOTOM Kafe — osobitý vizuál pro kavárnu</div>
+            <span class="project-chip">Branding</span><span class="project-chip">Packaging</span><span class="project-chip">Logo</span>
           </div>
         </div>
-        <div class="project-card" onclick="openPopupSkoda()">
+        <div class="project-card" onclick="openPopupTruhlik()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/skoda-01.jpg" alt="Vizuální zpracování podcastu #ExploreŠkoda" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/truhlik-01-400.webp 420w, images/truhlik-01-1100.webp 1100w, images/truhlik-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/truhlik-01-400.webp" alt="Můj Truhlík" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
+            </div>
           </div>
           <div class="project-info">
-            <div class="project-name">Vizuální zpracování podcastu #ExploreŠkoda</div>
-                        <span class="project-chip">Digital</span><span class="project-chip">Social media</span>
-          </div>
-        </div>
-        <div class="project-card" onclick="openPopupSMMS()">
-          <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/smms-01.jpg" alt="SMMS projekt" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
-            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
-              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
-          </div>
-          <div class="project-info">
-            <div class="project-name">SMMS projekt — nová identita ze skupiny Sammis</div>
-                        <span class="project-chip">Branding</span><span class="project-chip">Logo</span><span class="project-chip">Tiskoviny</span>
+            <div class="project-name">Můj Truhlík — kompletní brand a mnohem více</div>
+            <span class="project-chip">Full brand</span><span class="project-chip">E-commerce</span><span class="project-chip">Grafika</span>
           </div>
         </div>
         <div class="project-card" onclick="openPopupMediestetik()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/mediestetik-01.jpg" alt="Grafika a vizuální komunikace pro kliniku Mediestetik" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/mediestetik-01-400.webp 420w, images/mediestetik-01-1100.webp 1100w, images/mediestetik-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/mediestetik-01-400.webp" alt="Mediestetik" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
+            </div>
           </div>
           <div class="project-info">
-            <div class="project-name">Grafika a vizuální komunikace pro kliniku Mediestetik</div>
-                        <span class="project-chip">Grafika</span><span class="project-chip">Social media</span><span class="project-chip">Tisk</span>
+            <div class="project-name">Mediestetik — grafika a vizuální komunikace</div>
+            <span class="project-chip">Grafika</span><span class="project-chip">Social media</span><span class="project-chip">Tisk</span>
+          </div>
+        </div>
+        <div class="project-card" onclick="openPopupSkoda()">
+          <div class="project-thumb" style="position:relative;overflow:hidden">
+            <img srcset="images/skoda-01-400.webp 420w, images/skoda-01-1100.webp 1100w, images/skoda-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/skoda-01-400.webp" alt="Škoda Auto" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
+              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-name">Škoda Auto — vizuální styl pro podcast</div>
+            <span class="project-chip">Digital</span><span class="project-chip">Social media</span>
+          </div>
+        </div>
+        <div class="project-card" onclick="openPopupSMMS()">
+          <div class="project-thumb" style="position:relative;overflow:hidden">
+            <img srcset="images/smms-01-400.webp 420w, images/smms-01-1100.webp 1100w, images/smms-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/smms-01-400.webp" alt="SMMS projekt" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
+              <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-name">SMMS projekt — nová identita ze skupiny Sammis</div>
+            <span class="project-chip">Branding</span><span class="project-chip">Logo</span><span class="project-chip">Tiskoviny</span>
           </div>
         </div>
         <div class="project-card" onclick="openPopupRiverside()">
           <div class="project-thumb" style="position:relative;overflow:hidden">
-            <img src="images/riverside-01.jpg" alt="Riverside Bar" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
+            <img srcset="images/riverside-01-400.webp 420w, images/riverside-01-1100.webp 1100w, images/riverside-01.webp 1400w" sizes="(max-width: 480px) 380px, (max-width: 1024px) 800px, 1100px" src="images/riverside-01-400.webp" alt="Riverside Bar" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" />
             <div class="project-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(61,82,160,.85) 0%,transparent 60%);opacity:0;display:flex;align-items:flex-end;padding:1.25rem;transition:opacity .3s">
               <span style="color:white;font-size:.82rem;font-weight:600;letter-spacing:.04em">Zobrazit projekt →</span>
-                          </div>
+            </div>
           </div>
           <div class="project-info">
             <div class="project-name">Riverside Bar — svěží vizuál pro bar na vlnách Vltavy</div>
-                        <span class="project-chip">Identity</span><span class="project-chip">Logo</span><span class="project-chip">Grafika</span>
+            <span class="project-chip">Identity</span><span class="project-chip">Logo</span><span class="project-chip">Grafika</span>
           </div>
         </div>
       </div>
@@ -708,7 +740,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
       <div class="portfolio-cta-text">
         <h3 style="font-size:1.3rem">Váš projekt může vypadat stejně dobře.</h3>
       </div>
-      <button class="btn-accent" onclick="openForm()" style="background:var(--btn);color:#fff;border:none;padding:.85rem 1.75rem;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--sans)">Ozvěte se mi</button>
+      <button class="btn-accent" onclick="openForm()" style="background:var(--btn);color:#1A0800;border:none;padding:.85rem 1.75rem;border-radius:100px;font-size:.88rem;font-weight:600;cursor:pointer;font-family:var(--sans)">Ozvěte se mi</button>
     </div>
   </div>
 </section>
@@ -718,11 +750,11 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   <div class="popup">
     <button class="popup-close" onclick="closePopup()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-03.jpg" alt="Pivovar Holanďan" />
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-03-400.webp" alt="Pivovar Holanďan" />
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Branding · Tiskoviny · Fotografie</div>
-        <h2>Vizuální identita a tiskoviny pro Pivovar Holanďan</h2>
+        <h2>Pivovar Holanďan — vizuální identita a fotografie</h2>
       </div>
     </div>
     <div class="popup-body">
@@ -745,26 +777,26 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <p>Začali jsme u toho, jak má značka působit — navenek i uvnitř. Hledali jsme <strong>rovnováhu mezi řemeslem a současným vzhledem</strong>. Vizuál stojí na jednoduché barevnosti a typografii s lehce industriálním charakterem. Bez zbytečných efektů, ale s <strong>jasným výrazem</strong>. Každý výstup do tohohle rámce zapadá.</p>
         <div class="popup-photos" style="margin-bottom:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-03.jpg" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-03-400.webp" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
         </div>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-04.jpg" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-04.webp" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-05.jpg" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-06.jpg" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-05.webp" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-06.webp" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
         <div class="popup-photos" style="margin-top:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-07.jpg" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-07.webp" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-08.jpg" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-09.jpg" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-08.webp" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-09.webp" alt="Holanďan" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
       <div class="popup-result">
         <div class="popup-result-title">Výsledek</div>
-        <p>Vizuální komunikace se srovnala a <strong>začala fungovat jako celek</strong>. Od etiket přes tiskoviny až po prezentaci navenek působí značka <strong>konzistentně a čitelně</strong>.</p>
+        <p>Vizuální komunikace se srovnala a <strong>začala fungovat jako celek</strong>. Značka působí <strong>konzistentně a čitelně</strong> od etiket přes tiskoviny až po prezentaci navenek.</p>
         <p>Pořád si drží svůj <strong>řemeslný charakter</strong>, ale zároveň působí <strong>jistěji a profesionálněji</strong>.</p>
       </div>
       <div class="popup-footer">
@@ -772,7 +804,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopup();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopup();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -788,28 +820,28 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         <div class="s-label-inv">Služby</div>
         <h2 class="s-title" style="color:white">Jeden člověk,<br><em style="font-style:normal;color:var(--accentL);font-weight:800;text-decoration:underline;text-decoration-color:rgba(123,143,204,.4);text-decoration-thickness:2px;text-underline-offset:4px">kompletní vizuál.</em></h2>
       </div>
-      <p class="s-sub" style="color:rgba(255,255,255,.45)">Nemusíte koordinovat tři různé dodavatele. Grafiku, brand i obsah dostanete od jednoho člověka — bez agentury, bez prostředníků.</p>
+      <p class="s-sub" style="color:rgba(255,255,255,.78)">Nemusíte koordinovat tři různé dodavatele. Grafiku, brand i obsah dostanete od jednoho člověka — bez agentury, bez prostředníků.</p>
     </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">🎨</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
         <div class="service-title">Vizuální identita</div>
-        <div class="service-body">Logo, brand manuál a tiskoviny v jednom systému. Navrhuju identity, které fungují na webu, v tisku i na sociálních sítích — bez přepracování pokaždé znovu.</div>
+        <div class="service-body">Navrhuji loga, brand manuály i tiskoviny jako jeden promyšlený celek. Vytvořená identita funguje napříč kanály — na webu, v tisku i na sociálních sítích — bez nutnosti ji neustále upravovat.</div>
       </div>
       <div class="service-card">
-        <div class="service-icon">✦</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></div>
         <div class="service-title">Grafika pro online i tisk</div>
-        <div class="service-body">Bannery, posty, letáky, rollup, obal. Vždy v souladu s vaším vizuálním stylem. Jakmile znám váš brand, pracuji rychle a bez zbytečných kol.</div>
+        <div class="service-body">Bannery, posty, letáky, rollup, obaly. Vždy v souladu s vaším vizuálním stylem. Jakmile znám váš brand, pracuji rychle a bez zbytečných korektur.</div>
       </div>
       <div class="service-card">
-        <div class="service-icon">💻</div>
-        <div class="service-title">Webdesign</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="service-title">Web na míru</div>
         <div class="service-body">Čistý, přehledný web, který reprezentuje vaši značku. Navrhuji design a strukturu — dostanete web, který prodává i bez reklamy.</div>
       </div>
       <div class="service-card">
-        <div class="service-icon">♾</div>
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="service-title">Péče o značku</div>
-        <div class="service-body">Dlouhodobá spolupráce pro firmy, které chtějí stabilního grafického parťáka. Znám váš brand nazpaměť — jak firma roste, roste s ní i vizuální styl.</div>
+        <div class="service-body">Dlouhodobá spolupráce pro firmy, které chtějí stabilního grafického parťáka. Znám váš brand nazpaměť — jak firma roste, musí s ní růst i váš vizuální styl.</div>
       </div>
     </div>
     
@@ -818,44 +850,42 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 
 <!-- PROCESS -->
 <section class="process" id="process">
-  <div style="max-width:1200px;margin:0 auto;padding:5rem 6%">
+  <div class="process-inner">
     <div class="s-label">Proces</div>
     <h2 class="s-title" style="margin-bottom:.75rem">Jak <em>spolupráce</em> probíhá</h2>
-    <p class="s-sub" style="margin-top:.75rem;margin-bottom:3rem">Místo agentury s pěti lidmi a třemi předáváními — jeden člověk, který to celé drží.</p>
+    <p class="s-sub" style="margin-top:.75rem;margin-bottom:3.5rem">Místo agentury s pěti lidmi a třemi předáváními jsem tu pro vás já — jeden člověk, který to celé drží.</p>
     <div style="position:relative">
-      <div style="position:absolute;top:2.75rem;left:calc(12.5% + 22px);right:calc(12.5% + 22px);height:2px;border-top:2px dashed var(--accentL);z-index:0;pointer-events:none"></div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;align-items:start;position:relative;z-index:1">
-      <div style="background:var(--white);border-radius:20px;padding:1.75rem;border:1px solid var(--line);position:relative">
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">01</span>
+      <div class="process-line"></div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step-num"><span>01</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Seznámení a strategie</div>
+            <p class="process-step-body">Zavoláme si a probereme vaši značku, cíle a očekávání. Navrhnu řešení a strategii, která drží projekt ve správném směru po celou dobu spolupráce.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Seznámení<br>a strategie</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Zavoláme si a probereme vaši značku, cíle a očekávání. Navrhnu řešení a strategii, která drží projekt ve správném směru po celou dobu spolupráce.</p>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.75rem;border:1px solid var(--line);position:relative">
-        <div style="position:absolute;top:2.75rem;right:-1.25rem;width:1.25rem;height:2px;background:var(--accentL);z-index:2"></div>
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">02</span>
+        <div class="process-step">
+          <div class="process-step-num"><span>02</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Návrhy a koncepty</div>
+            <p class="process-step-body">Připravím několik různých návrhů, jak může vaše značka vizuálně fungovat. U každého vysvětlím, proč dává smysl. Společně vybereme ten nejlepší.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Návrhy<br>a koncepty</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Připravím několik různých návrhů, jak může vaše značka vizuálně fungovat. U každého vysvětlím, proč dává smysl a jak zapadá do vašeho byznysu. Společně vybereme ten nejlepší.</p>
-      </div>
-      <div style="background:var(--white);border-radius:20px;padding:1.75rem;border:1px solid var(--line);position:relative">
-        <div style="position:absolute;top:2.75rem;right:-1.25rem;width:1.25rem;height:2px;background:var(--accentL);z-index:2"></div>
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">03</span>
+        <div class="process-step">
+          <div class="process-step-num"><span>03</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Doladění a výstupy</div>
+            <p class="process-step-body">Vybraný návrh dotáhnu do finální podoby a připravím všechny soubory včetně brand manuálu. Vše připravené pro online i tisk.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Doladění<br>a výstupy</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Vybraný návrh dotáhnu do finální podoby a připravím všechny soubory. Součástí je i brand manuál, který definuje, jak značku správně používat. Vše bude připravené pro online i tisk.</p>
-      </div>
-      <div style="background:rgba(255,255,255,.92);border:1px solid rgba(255,255,255,.3);border-radius:20px;padding:1.75rem;transition:transform .25s,box-shadow .25s">
-        <div style="width:44px;height:44px;background:var(--accentLL);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem">
-          <span style="font-family:var(--serif);font-size:1rem;font-weight:800;color:var(--accent)">04</span>
+        <div class="process-step">
+          <div class="process-step-num"><span>04</span></div>
+          <div class="process-step-card">
+            <div class="process-step-title">Péče o značku</div>
+            <p class="process-step-body">Vytvořením loga to nekončí. Můžeme spolupracovat dlouhodobě a značku dál rozvíjet. Máte jednoho člověka, který ji zná a ví, kam ji posouvat.</p>
+          </div>
         </div>
-        <div style="font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--ink);margin-bottom:.75rem">Péče<br>o značku</div>
-        <p style="font-size:.97rem;color:var(--ink2);line-height:1.8">Vytvořením loga to nekončí. Můžeme spolupracovat dlouhodobě a značku dál rozvíjet. Máte tak jednoho člověka, který ji zná a ví, kam ji posouvat.</p>
       </div>
-    </div>
     </div>
   </div>
 </section>
@@ -871,15 +901,6 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     <div class="testimonials-carousel">
       <div class="testimonials-track" id="testimonialsTrack">
         
-        <div class="testimonial">
-          <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <div class="testimonial-text">„Michalovou velkou předností je spolehlivost a rychlost, se kterou pracuje. K tomu ovládá vícero technologií. My jsme již využili Adobe Photoshop, Ilustrátor, Dimension a WordPress. Navíc je sám fotografem, takže rozumí celému grafickému cyklu od fotografie až po přípravu tiskových dat či webové grafiky."</div>
-          <div class="testimonial-footer">
-            <div class="testimonial-name">Petr Janda</div>
-            <div class="testimonial-firm">Ponožkovice</div>
-            <a href="https://www.ponozkovice.cz" class="testimonial-link" target="_blank">www.ponozkovice.cz</a>
-          </div>
-        </div>
         <div class="testimonial">
           <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
           <div class="testimonial-text">„Spolupráce byla od začátku do konce na velmi vysoké úrovni. Oceňuji především skvělou a jasnou komunikaci, rychlost zpracování i zasílání návrhů. Velkým přínosem byla také ochota vysvětlit, jak se šablonami pracovat, a celková vstřícnost během celého procesu. Finální výstupy byly dodány v domluveném termínu a v perfektní kvalitě. Spolupráci mohu jednoznačně doporučit."</div>
@@ -900,20 +921,11 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="testimonial">
           <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <div class="testimonial-text">„Michal pro nás už několikrát tvořil propagační grafiku. Navrhl také loga pro chráněnou truhlářskou dílnu a Občerstvovnu u Kocoura. Vždycky přesně pochopil, co potřebujeme, a výsledky byly skvělé."</div>
+          <div class="testimonial-text">„Michalovou velkou předností je spolehlivost a rychlost, se kterou pracuje. K tomu ovládá vícero technologií. My jsme již využili Adobe Photoshop, Ilustrátor, Dimension a WordPress. Navíc je sám fotografem, takže rozumí celému grafickému cyklu od fotografie až po přípravu tiskových dat či webové grafiky."</div>
           <div class="testimonial-footer">
-            <div class="testimonial-name">Marie Hyklová</div>
-            <div class="testimonial-firm">BONA, o. p. s.</div>
-            <a href="https://www.bona-ops.cz" class="testimonial-link" target="_blank">www.bona-ops.cz</a>
-          </div>
-        </div>
-        <div class="testimonial">
-          <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <div class="testimonial-text">„Děkuji za skvělou spolupráci na mém logu! Výsledek je přesně podle mých představ – originální, profesionální a krásně vystihuje mou značku. Oceňuji rychlou komunikaci, kreativní přístup a ochotu zapracovat mé požadavky."</div>
-          <div class="testimonial-footer">
-            <div class="testimonial-name">Jana Holubová</div>
-            <div class="testimonial-firm">fotografka</div>
-            
+            <div class="testimonial-name">Petr Janda</div>
+            <div class="testimonial-firm">Ponožkovice</div>
+            <a href="https://www.ponozkovice.cz" class="testimonial-link" target="_blank">www.ponozkovice.cz</a>
           </div>
         </div>
         <div class="testimonial">
@@ -927,6 +939,15 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="testimonial">
           <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+          <div class="testimonial-text">„S Michalem jsem spolupracoval na vytvoření vizuální identity firmy, webové stránky, logo, propagační předměty, fotky a videa. Od začátku pochopil moji vizi. Měl skvělé nápady i následnou realizaci."</div>
+          <div class="testimonial-footer">
+            <div class="testimonial-name">Lukáš Rohlíček</div>
+            <div class="testimonial-firm">zaminutku.cz</div>
+
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
           <div class="testimonial-text">„Pan Kubík nám zpracovával logo pro apartmán a grafický návrh na reklamní roll-upy. V obou případech byla zakázka vyřízená k naší naprosté spokojenosti. Moc děkuji také za neskutečnou rychlost - to se dnes příliš často nevidí."</div>
           <div class="testimonial-footer">
             <div class="testimonial-name">Hana Vrbová</div>
@@ -936,20 +957,29 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="testimonial">
           <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <div class="testimonial-text">„Služby pana Kubíka mohu vřele doporučit. Nechal jsem si u něj navrhnout logo a font písma a byl jsem naprosto spokojený. Komunikace byla rychlá a efektivní, a návrh jsem měl hotový už za tři dny."</div>
+          <div class="testimonial-text">„Michal pro nás už několikrát tvořil propagační grafiku. Navrhl také loga pro chráněnou truhlářskou dílnu a Občerstvovnu u Kocoura. Vždycky přesně pochopil, co potřebujeme, a výsledky byly skvělé."</div>
           <div class="testimonial-footer">
-            <div class="testimonial-name">Michal Tumpach</div>
-            <div class="testimonial-firm">Autoservis Mišák</div>
-            <a href="https://www.autoservismisak.cz" class="testimonial-link" target="_blank">www.autoservismisak.cz</a>
+            <div class="testimonial-name">Marie Hyklová</div>
+            <div class="testimonial-firm">BONA, o. p. s.</div>
+            <a href="https://www.bona-ops.cz" class="testimonial-link" target="_blank">www.bona-ops.cz</a>
           </div>
         </div>
         <div class="testimonial">
           <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
-          <div class="testimonial-text">„S Michalem jsem spolupracoval na vytvoření vizuální identity firmy, webové stránky, logo, propagační předměty, fotky a videa. Od začátku pochopil moji vizi. Měl skvělé nápady i následnou realizaci."</div>
+          <div class="testimonial-text">„Děkuji za skvělou spolupráci na mém logu! Výsledek je přesně podle mých představ – originální, profesionální a krásně vystihuje mou značku. Oceňuji rychlou komunikaci, kreativní přístup a ochotu zapracovat mé požadavky."</div>
           <div class="testimonial-footer">
-            <div class="testimonial-name">Lukáš Rohlíček</div>
-            <div class="testimonial-firm">zaminutku.cz</div>
-            
+            <div class="testimonial-name">Jana Holubová</div>
+            <div class="testimonial-firm">fotografka</div>
+
+          </div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-stars"><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div></div>
+          <div class="testimonial-text">„Služby pana Kubíka mohu vřele doporučit. Nechal jsem si u něj navrhnout logo a font písma a byl jsem naprosto spokojený. Komunikace byla rychlá a efektivní, a návrh jsem měl hotový už za tři dny."</div>
+          <div class="testimonial-footer">
+            <div class="testimonial-name">Michal Tumpach</div>
+            <div class="testimonial-firm">Autoservis Mišák</div>
+            <div class="testimonial-firm">autoservismisak.cz</div>
           </div>
         </div>
         <div class="testimonial">
@@ -958,7 +988,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
           <div class="testimonial-footer">
             <div class="testimonial-name">Radek Slavík</div>
             <div class="testimonial-firm">slavikcarcare.cz</div>
-            
+
           </div>
         </div>
         
@@ -968,7 +998,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     
     <div class="clients-row">
       <span class="clients-label">Pracoval jsem s</span>
-      <div class="client-logo-box" title="Ponožkovice"><img src="images/misc-10.png" alt="Ponožkovice" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Medireco"><img src="images/misc-11.png" alt="Medireco" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="BOMA"><img src="images/misc-12.png" alt="BOMA" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="SAMMIS"><img src="images/misc-13.png" alt="SAMMIS" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Mediestetik"><img src="images/misc-14.png" alt="Mediestetik" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="BONA o.p.s."><img src="images/misc-15.png" alt="BONA o.p.s." style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Etna"><img src="images/misc-16.png" alt="Etna" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Akuflex"><img src="images/misc-17.png" alt="Akuflex" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Škoda"><img src="images/misc-18.png" alt="Škoda" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Můj Truhlík"><img src="images/misc-56.png" alt="Můj Truhlík" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Pivovar Agent"><img src="images/misc-57.png" alt="Pivovar Agent" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Pro doma"><img src="images/misc-58.png" alt="Pro doma" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="VOTOM"><img src="images/misc-59.png" alt="VOTOM" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="AIP"><img src="images/misc-60.png" alt="AIP" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div>
+      <div class="client-logo-box" title="Škoda"><img src="images/misc-18.webp" alt="Škoda" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Mediestetik"><img src="images/misc-14.webp" alt="Mediestetik" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="SAMMIS"><img src="images/misc-13.webp" alt="SAMMIS" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Můj Truhlík"><img src="images/misc-56.webp" alt="Můj Truhlík" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Ponožkovice"><img src="images/misc-10.webp" alt="Ponožkovice" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Etna"><img src="images/misc-16.webp" alt="Etna" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Pivovar Agent"><img src="images/misc-57.webp" alt="Pivovar Agent" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="SMMS"><img src="images/smms.webp" alt="SMMS" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="BOMA"><img src="images/misc-12.webp" alt="BOMA" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="VOTOM"><img src="images/misc-59.webp" alt="VOTOM" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Pro doma"><img src="images/misc-58.webp" alt="Pro doma" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Medireco"><img src="images/misc-11.webp" alt="Medireco" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="AIP"><img src="images/misc-60.webp" alt="AIP" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="BONA o.p.s."><img src="images/misc-15.webp" alt="BONA o.p.s." width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div><div class="client-logo-box" title="Akuflex"><img src="images/misc-17.webp" alt="Akuflex" width="140" height="70" style="max-height:40px;max-width:120px;width:auto;height:auto;opacity:.75;filter:brightness(0) saturate(100%) invert(26%) sepia(55%) saturate(600%) hue-rotate(200deg) brightness(85%)" /></div>
     </div>
   </
   </div>
@@ -988,7 +1018,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         <div class="pricing-tagline">Právě zakládáte firmu nebo jste přerostli staré logo. Tohle je základ, na kterém všechno ostatní stojí.</div>
         <div class="pricing-price">od 15 000 Kč</div>
         <ul class="pricing-benefits">
-          <li>Logo ve všech formátech — web, tisk, sociální sítě</li>
+          <li>Logo ve všech formátech — pro web i tisk</li>
           <li>Vizualizace loga v reálném prostředí</li>
           <li>Kompletní logomanuál</li>
           <li>Podklady připravené k okamžitému použití</li>
@@ -1007,7 +1037,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
           <li>Otevřené soubory pro vizitky, letáky a další tisk</li>
           <li>Připravené šablony pro sociální sítě</li>
           <li>Tiskové materiály v otevřených souborech — připravené k úpravám</li>
-          <li>Konzultace — brand nastavený jako nástroj prodeje</li>
+          <li>Kompletně nastavený brand — od strategie po finální výstupy</li>
         </ul>
         <div class="pricing-result">Výsledek: Zákazník vás pozná na první pohled — kdekoliv vás uvidí.</div>
       </div>
@@ -1015,7 +1045,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
       <div class="pricing-card">
         <div class="pricing-label">Web, který prodává</div>
         <div class="pricing-title">Web postavený na konverzi</div>
-        <div class="pricing-tagline">Hezký web nestačí. Zákazník musí vědět, co má dělat — a udělat to. Na tohle web navrhuji.</div>
+        <div class="pricing-tagline">Hezký web nestačí. Zákazník musí vědět, co má dělat — a udělat to. Podle toho web navrhuji.</div>
         <div class="pricing-price">od 25 000 Kč</div>
         <ul class="pricing-benefits">
           <li>Struktura navržená na konverzi, ne jen na vzhled</li>
@@ -1027,7 +1057,10 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         <div class="pricing-result">Výsledek: Spustíte web a zákazníci hned vědí, proč oslovit právě vás.</div>
       </div>
     </div>
-    <p style="font-size:.82rem;color:var(--muted);text-align:center">Přesnou cenu zjistíte po krátkém hovoru. Poptávka je nezávazná a zdarma.</p>
+    <p style="font-size:.82rem;color:var(--muted);text-align:center;margin-bottom:2rem">Přesnou cenu zjistíte po krátkém hovoru. Poptávka je nezávazná a zdarma.</p>
+    <div style="text-align:center">
+      <button class="btn-accent" onclick="openForm()" style="display:inline-block;width:auto;padding:1rem 2.5rem;font-size:1rem">Nezávazně poptat</button>
+    </div>
   </div>
 </section>
 
@@ -1036,7 +1069,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   <div class="about-inner">
     <div class="about-left">
       <div class="about-photo">
-        <img src="images/misc-19.jpg" alt="Michal Kubík" />
+        <img src="images/michalkubik_footer_A.webp" alt="Michal Kubík" />
       </div>
       <div class="about-badge"><div class="about-badge-num">10+</div><div class="about-badge-label">let praxe</div></div>
     </div>
@@ -1074,11 +1107,12 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div>
-        <div class="footer-logo"><img src="images/card-01.png" alt="MK logo" style="height:72px;width:auto;margin-bottom:.25rem" /></div>
+        <div class="footer-logo"><img src="images/card-01.webp" alt="MK logo" width="72" height="72" style="height:72px;width:auto;margin-bottom:.25rem" /></div>
         <div class="footer-desc">Grafický designér na volné noze. Branding, vizuální identity a grafika pro firmy, které chtějí být nezaměnitelné.</div>
         <div class="footer-ico">IČO: 06023061</div>
       </div>
@@ -1094,8 +1128,9 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
       <div>
         <div class="footer-col-title">Sledujte mě</div>
         <ul class="footer-links">
-          <li><a href="#" target="_blank">Instagram</a></li>
-          <li><a href="#" target="_blank">Behance</a></li>
+          <li><a href="https://www.instagram.com/michalkubikcz/" target="_blank">Instagram</a></li>
+          <li><a href="https://www.behance.net/michalkubik1" target="_blank">Behance</a></li>
+          <li><a href="https://www.linkedin.com/in/michal-kub%C3%ADk-b8449a383/" target="_blank">LinkedIn</a></li>
         </ul>
       </div>
       <div>
@@ -1159,7 +1194,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     <div class="form-success" id="formSuccess">
       <div class="form-success-icon">🎉</div>
       <h3>Skvěle! Zpráva odeslána.</h3>
-      <p>Děkuji za váš zájem. Ozvu se vám do 24 hodin s návrhem dalšího postupu.<br><br>Mezitím se můžete podívat na moje portfolio nebo mě sledovat na Instagramu.</p>
+      <p>Děkuji za váš zájem. Ozvu se vám do 24 hodin s návrhem dalšího postupu.</p>
     </div>
   </div>
 </div>
@@ -1180,14 +1215,12 @@ function makeDragSlider(wrapSel, trackId) {
   var lastX = 0;
   var lastT = 0;
 
-  function maxScroll() {
-    return Math.max(0, track.scrollWidth - wrap.offsetWidth);
-  }
-  function clamp(x) {
-    return Math.max(0, Math.min(maxScroll(), x));
-  }
+  var cachedMax = 0;
+  function updateMaxCache() { cachedMax = Math.max(0, track.scrollWidth - wrap.offsetWidth); }
+  function maxScroll() { return cachedMax; }
+  function clamp(x) { return Math.max(0, Math.min(cachedMax, x)); }
   function updateFade() {
-    var atEnd = posX >= maxScroll() - 2;
+    var atEnd = posX >= cachedMax - 2;
     if (atEnd) {
       wrap.classList.remove('has-more');
     } else {
@@ -1222,6 +1255,7 @@ function makeDragSlider(wrapSel, trackId) {
     if (e.type === 'touchmove' && isHorizontal === null) {
       var dx = Math.abs(clientX - startX);
       var dy = Math.abs(clientY - startY);
+      if (dx < 8 && dy < 8) return;
       isHorizontal = dx > dy;
       if (!isHorizontal) { isDragging = false; wrap.classList.remove('is-dragging'); return; }
     }
@@ -1259,6 +1293,7 @@ function makeDragSlider(wrapSel, trackId) {
   }, true);
 
   function animateTo(targetX) {
+    updateMaxCache();
     var start = posX;
     var target = clamp(targetX);
     var duration = 400;
@@ -1281,13 +1316,20 @@ function makeDragSlider(wrapSel, trackId) {
       animateTo(posX + dir * cardW);
     },
     getPos: function() { return posX; },
-    getMax: function() { return maxScroll(); }
+    getMax: function() { return maxScroll(); },
+    updateMaxCache: updateMaxCache
   };
 }
 
 window.addEventListener('load', function() {
   window._portfolioSlide = makeDragSlider('.portfolio-slider-wrap', 'portfolioTrack');
   window._testimonialsSlide = makeDragSlider('.testimonials-carousel', 'testimonialsTrack');
+  if (window._portfolioSlide) window._portfolioSlide.updateMaxCache && window._portfolioSlide.updateMaxCache();
+  if (window._testimonialsSlide) window._testimonialsSlide.updateMaxCache && window._testimonialsSlide.updateMaxCache();
+  window.addEventListener('resize', function() {
+    if (window._portfolioSlide && window._portfolioSlide.updateMaxCache) window._portfolioSlide.updateMaxCache();
+    if (window._testimonialsSlide && window._testimonialsSlide.updateMaxCache) window._testimonialsSlide.updateMaxCache();
+  }, {passive: true});
   updateSliderArrows('.slider-wrapper:first-of-type', window._portfolioSlide);
   updateSliderArrows('.testimonials-carousel', window._testimonialsSlide);
   // Init fade — přidat has-more pokud je co scrollovat
@@ -1428,12 +1470,16 @@ function submitForm(e){
     }).catch(()=>{alert('Nepodařilo se odeslat. Prosím napište přímo na info@michalkubik.cz');});
 }
 
-// Nav active
+// Nav active — cache offsetTop to avoid forced reflow on every scroll
 const sections=document.querySelectorAll('section[id]');
 const links=document.querySelectorAll('.nav-links a');
+let sectionTops=[];
+function cacheSectionTops(){sectionTops=Array.from(sections).map(s=>({id:s.id,top:s.offsetTop}));}
+cacheSectionTops();
+window.addEventListener('resize',cacheSectionTops,{passive:true});
 window.addEventListener('scroll',()=>{
-  let cur='';
-  sections.forEach(s=>{if(scrollY>=s.offsetTop-90)cur=s.id;});
+  let cur='',sy=scrollY;
+  for(let i=0;i<sectionTops.length;i++){if(sy>=sectionTops[i].top-90)cur=sectionTops[i].id;}
   links.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'#7B9DD4':'rgba(255,255,255,.6)';});
 },{passive:true});
 
@@ -1446,7 +1492,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupTruhlik()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/truhlik-01.jpg" alt="Můj Truhlík" />
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/truhlik-01-400.webp" alt="Můj Truhlík" />
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Branding · Identita · Tiskoviny</div>
@@ -1473,20 +1519,20 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Začal jsem logem — propojil jsem písmena M a T do jednoduché značky, která <strong>funguje na produktu i online</strong>. Na logo jsem navázal <strong>celý vizuální systém</strong> inspirovaný přírodními materiály. Všechno jsme ladili tak, aby značka působila <strong>přirozeně</strong> a nebyla „překombinovaná".</p>
         <div class="popup-photos" style="margin-bottom:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/truhlik-01.jpg" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/truhlik-01-400.webp" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
         </div>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-20.jpg" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-20.webp" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-21.jpg" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-22.jpg" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-21.webp" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-22.webp" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
         <div class="popup-photos" style="margin-top:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-23.jpg" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-23.webp" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-24.jpg" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-25.jpg" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-24.webp" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-25.webp" alt="Truhlík" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
@@ -1500,7 +1546,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupTruhlik();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupTruhlik();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1512,7 +1558,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupIPP()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/ipp-01.jpg" alt="Poliklinika IPP" />
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/ipp-01-400.webp" alt="Poliklinika IPP" />
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Branding · Tiskoviny · Signage</div>
@@ -1522,7 +1568,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
     <div class="popup-body">
       <div class="popup-intro">
         <div class="popup-intro-text">
-          <p>Poliklinika IPP je <strong>moderní zdravotnické centrum</strong> s desítkami odborných pracovišť a poboček. Vizuální komunikace ale nebyla jednotná — každé oddělení působilo jinak.</p>
+          <p>Poliklinika IPP je <strong>moderní zdravotnické centrum</strong> s desítkami odborných pracovišť a poboček. Neměli ale jednotnou vizuální komunikaci — každé oddělení působilo jinak.</p>
           <p>Cílem bylo dát tomu <strong>řád</strong> a vytvořit <strong>systém, který bude fungovat v praxi</strong>.</p>
         </div>
         <div class="popup-tags">
@@ -1539,17 +1585,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Vycházeli jsme z existujícího loga a postavili kolem něj <strong>funkční systém</strong>. Nová barevnost, typografie a práce s prostorem pomáhají <strong>orientaci i celkovému dojmu</strong>. Vizuál musel být <strong>profesionální</strong>, ale zároveň příjemný pro pacienty.</p>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-26.jpg" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-26.webp" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-27.jpg" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-28.jpg" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-27.webp" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-28.webp" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
         <div class="popup-photos" style="margin-top:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-29.jpg" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-29.webp" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-30.jpg" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/ipp-01.jpg" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-30.webp" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/ipp-01-400.webp" alt="IPP" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
@@ -1563,7 +1609,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupIPP();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupIPP();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1575,11 +1621,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupSkoda()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skoda-01.jpg" alt="#ExploreŠkoda" />
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skoda-01-400.webp" alt="#ExploreŠkoda" />
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Digital · Social media</div>
-        <h2>Vizuální styl pro podcast #ExploreŠkoda</h2>
+        <h2>Škoda Auto — vizuální styl pro podcast</h2>
       </div>
     </div>
     <div class="popup-body">
@@ -1599,10 +1645,10 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Práce probíhala přesně podle jejich brand manuálu. O to víc šlo o detail — <strong>typografie, kompozice, rytmus</strong>. Cílem bylo dodat vizuálu <strong>lehkost</strong>, aniž by se porušila pravidla značky.</p>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-31.jpg" alt="ExploreŠkoda" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-31.webp" alt="ExploreŠkoda" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-32.jpg" alt="ExploreŠkoda" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skoda-01.jpg" alt="ExploreŠkoda" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-32.webp" alt="ExploreŠkoda" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/skoda-01-400.webp" alt="ExploreŠkoda" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
@@ -1616,7 +1662,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupSkoda();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupSkoda();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1628,7 +1674,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupSMMS()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/smms-01.jpg" alt="SMMS Projekt" />
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/smms-01-400.webp" alt="SMMS Projekt" />
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Identita · Logo · Fotografie</div>
@@ -1654,17 +1700,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Klíčové bylo najít <strong>balanc mezi samostatností a návazností</strong>. Logo pracuje s motivem linie jako symbolem <strong>spojení a stability</strong>. Vizuální styl navazuje na Sammis, takže <strong>obě značky fungují vedle sebe</strong> bez rušení.</p>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-33.jpg" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-33.webp" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-34.jpg" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-35.jpg" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-34.webp" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-35.webp" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
         <div class="popup-photos" style="margin-top:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-36.jpg" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-36.webp" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-37.jpg" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/smms-01.jpg" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-37.webp" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/smms-01-400.webp" alt="SMMS" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
@@ -1678,7 +1724,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupSMMS();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupSMMS();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1690,7 +1736,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupVotom()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/votom-01.jpg" alt="VOTOM Kafe" />
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/votom-01-400.webp" alt="VOTOM Kafe" />
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Branding · Logo · Packaging</div>
@@ -1717,17 +1763,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Zvolil jsem <strong>ručně kreslený styl</strong> — lehký, trochu hravý, ale pořád čitelný. Ten se propsal do <strong>všech výstupů od kelímků po cedule</strong>. Díky tomu <strong>značka drží pohromadě</strong>, i když funguje na různých místech.</p>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-38.jpg" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-38.webp" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-39.jpg" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-40.jpg" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-39.webp" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-40.webp" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
         <div class="popup-photos" style="margin-top:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-41.jpg" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-41.webp" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-42.jpg" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/votom-01.jpg" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-42.webp" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/votom-01-400.webp" alt="VOTOM" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
@@ -1741,7 +1787,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupVotom();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupVotom();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1753,7 +1799,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupRiverside()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/riverside-01.jpg" alt="Riverside Bar" />
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/riverside-01-400.webp" alt="Riverside Bar" />
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Grafika · Tiskoviny</div>
@@ -1779,17 +1825,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Postavili jsme <strong>jednoduchý systém</strong> založený na typografii a čistém layoutu. Nic složitého — spíš jsme potřebovali <strong>dát věcem řád</strong> a udržet <strong>konzistenci napříč výstupy</strong>.</p>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-43.jpg" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-43.webp" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-44.jpg" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-45.jpg" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-44.webp" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-45.webp" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
         <div class="popup-photos" style="margin-top:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-46.jpg" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-46.webp" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-47.jpg" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/riverside-01.jpg" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-47.webp" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/riverside-01-400.webp" alt="Riverside" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
@@ -1803,7 +1849,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupRiverside();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupRiverside();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1818,11 +1864,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupMediestetik()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/mediestetik-01.jpg" alt="Mediestetik">
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/mediestetik-01-400.webp" alt="Mediestetik">
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Grafika · Tiskoviny · Social media</div>
-        <h2>Grafika a vizuální komunikace pro Mediestetik</h2>
+        <h2>Mediestetik — grafika a vizuální komunikace</h2>
       </div>
     </div>
     <div class="popup-body">
@@ -1844,17 +1890,17 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Navrhl jsem <strong>čistý vizuální styl</strong>, který je srozumitelný a <strong>nepůsobí sterilně</strong>. Důležitou částí bylo i předání informací o tom, jak s obsahem pracovat — včetně <strong>školení focení</strong>, aby si tým zvládl materiály <strong>tvořit sám</strong>.</p>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-48.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-48.webp" style="width:100%;height:100%;object-fit:cover"></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-49.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-50.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-49.webp" style="width:100%;height:100%;object-fit:cover"></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-50.webp" style="width:100%;height:100%;object-fit:cover"></div>
           </div>
         </div>
         <div class="popup-photos" style="margin-top:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-51.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-51.webp" style="width:100%;height:100%;object-fit:cover"></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-52.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/mediestetik-01.jpg" alt="Mediestetik" style="width:100%;height:100%;object-fit:cover" /></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-52.webp" style="width:100%;height:100%;object-fit:cover"></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/mediestetik-01-400.webp" alt="Mediestetik" style="width:100%;height:100%;object-fit:cover" /></div>
           </div>
         </div>
       </div>
@@ -1868,7 +1914,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupMediestetik();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupMediestetik();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
@@ -1882,7 +1928,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
   <div class="popup">
     <button class="popup-close" onclick="closePopupEtna()">✕</button>
     <div class="popup-banner">
-      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/etna-01.jpg" alt="ETNA">
+      <img class="popup-banner-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/etna-01-400.webp" alt="ETNA">
       <div class="popup-banner-grad"></div>
       <div class="popup-banner-content">
         <div class="popup-banner-chip">Branding · Identita · Social media</div>
@@ -1908,13 +1954,13 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
         </div>
         <p>Začali jsme nastavením vizuálního jazyka, který odpovídá pozici značky — <strong>čistý, sofistikovaný a důvěryhodný</strong>, ale ne chladný. Vznikly <strong>grafické šablony pro sociální sítě</strong> navržené tak, aby je tým ETNy mohl <strong>sám snadno spravovat</strong>.</p>
         <div class="popup-photos" style="margin-bottom:1rem">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/etna-01.jpg" alt="ETNA" style="width:100%;height:100%;object-fit:cover" /></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/etna-01-400.webp" alt="ETNA" style="width:100%;height:100%;object-fit:cover" /></div>
         </div>
         <div class="popup-photos">
-          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-53.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="popup-photo-main"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-53.webp" style="width:100%;height:100%;object-fit:cover"></div>
           <div class="popup-photo-stack">
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-54.jpg" style="width:100%;height:100%;object-fit:cover"></div>
-            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-55.jpg" style="width:100%;height:100%;object-fit:cover"></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-54.webp" style="width:100%;height:100%;object-fit:cover"></div>
+            <div class="popup-photo-small"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/misc-55.webp" style="width:100%;height:100%;object-fit:cover"></div>
           </div>
         </div>
       </div>
@@ -1928,7 +1974,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
           <p>Chcete, aby si vás zákazníci vybrali na první pohled?</p>
           <p>Nezávazná konzultace zdarma</p>
         </div>
-        <button class="btn-accent" onclick="closePopupEtna();openForm()" style="white-space:nowrap;flex-shrink:0">Nezávazně poptat projekt</button>
+        <button class="btn-accent" onclick="closePopupEtna();openForm()" style="flex-shrink:0">Nezávazně poptat projekt</button>
       </div>
     </div>
   </div>
