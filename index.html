@@ -1213,11 +1213,12 @@ function makeDragSlider(wrapSel, trackId) {
     updateFade();
   }
   function onDown(e) {
+    if (e.pointerType !== undefined) { wrap.setPointerCapture(e.pointerId); }
     isDragging = true;
     isHorizontal = null;
     wrap.classList.add('is-dragging');
-    startX = e.type === 'touchstart' ? e.touches[0].clientX : e.clientX;
-    startY = e.type === 'touchstart' ? e.touches[0].clientY : 0;
+    startX = e.touches ? e.touches[0].clientX : e.clientX;
+    startY = e.touches ? e.touches[0].clientY : e.clientY;
     startPos = posX;
     velX = 0;
     lastX = startX;
@@ -1229,17 +1230,16 @@ function makeDragSlider(wrapSel, trackId) {
   var startY = 0;
   function onMove(e) {
     if (!isDragging) return;
-    var clientX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
-    var clientY = e.type === 'touchmove' ? e.touches[0].clientY : 0;
-    // Při touch: zjistit směr tahu
-    if (e.type === 'touchmove' && isHorizontal === null) {
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    if (e.touches && isHorizontal === null) {
       var dx = Math.abs(clientX - startX);
       var dy = Math.abs(clientY - startY);
       if (dx < 8 && dy < 8) return;
       isHorizontal = dx > dy;
       if (!isHorizontal) { isDragging = false; wrap.classList.remove('is-dragging'); return; }
     }
-    if (!isHorizontal && e.type === 'touchmove') return;
+    if (!isHorizontal && e.touches) return;
     if (e.cancelable && isHorizontal) e.preventDefault();
     var now = Date.now();
     velX = Math.max(-8, Math.min(8, (lastX - clientX) / Math.max(1, now - lastT) * 16));
@@ -1262,10 +1262,10 @@ function makeDragSlider(wrapSel, trackId) {
     }
     raf = requestAnimationFrame(momentum);
   }
-  wrap.addEventListener('mousedown', onDown);
-  window.addEventListener('mousemove', onMove);
-  window.addEventListener('mouseup', onUp);
-  window.addEventListener('blur', onUp);
+  wrap.addEventListener('pointerdown', onDown);
+  wrap.addEventListener('pointermove', onMove);
+  wrap.addEventListener('pointerup', onUp);
+  wrap.addEventListener('pointercancel', onUp);
   wrap.addEventListener('touchstart', onDown, {passive: true});
   wrap.addEventListener('touchmove', onMove, {passive: false});
   wrap.addEventListener('touchend', onUp);
