@@ -3,8 +3,40 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Michal Kubík — Grafický designér & Brand</title>
-<meta name="description" content="Michal Kubík — grafický designér a brand specialista z Prahy. Vytvářím vizuální identity, loga, weby a grafiku pro firmy, které chtějí vypadat profesionálně. Nezávazná poptávka zdarma.">
+<title>Michal Kubík | Branding & Vizuální identity</title>
+<meta name="description" content="Navrhuju loga a vizuální identity pro firmy, které chtějí růst a působit profesionálně. Spolupracujte přímo se mnou, bez prostředníků, od návrhu po realizaci.">
+<link rel="canonical" href="https://michalkubik.cz/" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://michalkubik.cz/">
+<meta property="og:title" content="Michal Kubík | Branding & Vizuální identity">
+<meta property="og:description" content="Navrhuju loga a vizuální identity pro firmy, které chtějí růst a působit profesionálně. Spolupracujte přímo se mnou, bez prostředníků, od návrhu po realizaci.">
+<meta property="og:image" content="https://michalkubik.cz/images/og-image.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Michal Kubík | Branding & Vizuální identity">
+<meta name="twitter:description" content="Navrhuju loga a vizuální identity pro firmy, které chtějí růst a působit profesionálně.">
+<meta name="twitter:image" content="https://michalkubik.cz/images/og-image.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Michal Kubík – grafický designér",
+  "image": "https://michalkubik.cz/images/og-image.webp",
+  "@id": "https://michalkubik.cz",
+  "url": "https://michalkubik.cz",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CZ"
+  },
+  "jobTitle": "Grafický designér & Specialista na branding",
+  "description": "Navrhuji loga a vizuální identity pro firmy, které chtějí růst a působit profesionálně.",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+}
+</script>
 <link rel="icon" type="image/png" href="images/misc-01.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +91,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 .hero h1{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:1.75rem}
 .hero h1 em{font-style:normal;color:var(--accent);font-weight:800;text-decoration:underline;text-decoration-color:var(--accentL);text-decoration-thickness:3px;text-underline-offset:5px}
+.hero h1 .subtitle{display:block;font-family:var(--sans);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:.6rem}
 .hero-sub{font-size:1.05rem;color:var(--ink2);line-height:1.75;max-width:500px;margin-bottom:2.5rem}
 .hero-sub strong{color:var(--ink);font-weight:600}
 .hero-buttons{display:flex;gap:1rem;align-items:center;margin-bottom:3rem}
@@ -569,7 +602,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   <div class="hero-inner">
     <div class="hero-left">
       <div class="hero-badge">Grafický design & branding</div>
-      <h1>Vizuální identita,<br>která vaší firmě<br><em>přinese zákazníky.</em></h1>
+      <h1><span class="subtitle">Grafický design & branding</span>Vizuální identita, která vaší firmě přinese zákazníky.</h1>
       <p class="hero-sub">Navrhuju loga, vizuální identity a grafiku pro firmy, které chtějí nejen být vidět, ale i působit profesionálně. Komunikace probíhá přímo se mnou, bez prostředníků, od prvního návrhu až po finální výstupy.</p>
       <div class="hero-buttons">
         <button class="btn-accent" onclick="openForm()">Nezávazně poptat</button>
@@ -583,7 +616,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     </div>
     <div class="hero-right">
       <div class="hero-photo-wrap">
-        <img src="images/michalkubik_A.webp" alt="Michal Kubík" width="700" height="700" fetchpriority="high" />
+        <img src="images/michalkubik_A.webp" alt="Michal Kubík – grafický designér a specialista na branding a vizuální identity pro firmy" width="700" height="700" fetchpriority="high" />
       </div>
       <div class="float-card float-card-1">
         <div class="float-num">120+</div>
@@ -628,7 +661,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         
         <div class="project-card" onclick="openPopupIPP()">
           <div class="project-thumb">
-            <picture><source media="(max-width: 480px)" srcset="images/ipp-01-400.webp"><img srcset="images/ipp-01-400.webp 420w, images/ipp-01-1100.webp 1100w, images/ipp-01.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/ipp-01-400.webp" alt="Poliklinika IPP" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
+            <picture><source media="(max-width: 480px)" srcset="images/ipp-01-400.webp"><img srcset="images/ipp-01-400.webp 420w, images/ipp-01-1100.webp 1100w, images/ipp-01.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/ipp-01-400.webp" alt="Komplexní vizuální identita pro firemní brand – Michal Kubík portfolio" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
           </div>
           <div class="project-info">
             <div class="project-name">Poliklinika IPP — jednotná identita pro celé zdravotní centrum</div>
@@ -637,7 +670,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupEtna()">
           <div class="project-thumb">
-            <picture><source media="(max-width: 480px)" srcset="images/etna-01-400.webp"><img srcset="images/etna-01-400.webp 420w, images/etna-01-1100.webp 1100w, images/etna-01.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/etna-01-400.webp" alt="ETNA" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
+            <picture><source media="(max-width: 480px)" srcset="images/etna-01-400.webp"><img srcset="images/etna-01-400.webp 420w, images/etna-01-1100.webp 1100w, images/etna-01.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/etna-01-400.webp" alt="Branding na míru a strategický design značky pro rostoucí firmu" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
           </div>
           <div class="project-info">
             <div class="project-name">ETNA — světlo, které má systém</div>
@@ -646,7 +679,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopup()">
           <div class="project-thumb">
-            <picture><source media="(max-width: 480px)" srcset="images/misc-03-400.webp"><img srcset="images/misc-03-400.webp 420w, images/misc-03-1100.webp 1100w, images/misc-03.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/misc-03-400.webp" alt="Pivovar Holanďan" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
+            <picture><source media="(max-width: 480px)" srcset="images/misc-03-400.webp"><img srcset="images/misc-03-400.webp 420w, images/misc-03-1100.webp 1100w, images/misc-03.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/misc-03-400.webp" alt="Design loga a firemní identity – ukázka minimalistického a funkčního brandingu" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
           </div>
           <div class="project-info">
             <div class="project-name">Pivovar Holanďan — vizuální identita a fotografie</div>
@@ -655,7 +688,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
         </div>
         <div class="project-card" onclick="openPopupVotom()">
           <div class="project-thumb">
-            <picture><source media="(max-width: 480px)" srcset="images/votom-01-400.webp"><img srcset="images/votom-01-400.webp 420w, images/votom-01-1100.webp 1100w, images/votom-01.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/votom-01-400.webp" alt="VOTOM Kafe" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
+            <picture><source media="(max-width: 480px)" srcset="images/votom-01-400.webp"><img srcset="images/votom-01-400.webp 420w, images/votom-01-1100.webp 1100w, images/votom-01.webp 1400w" sizes="(max-width: 1024px) 800px, 1100px" src="images/votom-01-400.webp" alt="Webdesign a grafický návrh uživatelského rozhraní pro českou firmu" width="1400" height="1050" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform .4s" /></picture>
           </div>
           <div class="project-info">
             <div class="project-name">VOTOM Kafe — osobitý vizuál pro kavárnu</div>
@@ -1044,7 +1077,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
   <div class="about-inner">
     <div class="about-left">
       <div class="about-photo">
-        <img src="images/michalkubik_footer_A.webp" alt="Michal Kubík" />
+        <img src="images/michalkubik_footer_A.webp" alt="Michal Kubík – grafický designér a specialista na branding a vizuální identity pro firmy" />
       </div>
       <div class="about-badge"><div class="about-badge-num">10+</div><div class="about-badge-label">let praxe</div></div>
     </div>
