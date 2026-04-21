@@ -1212,42 +1212,27 @@ function makeDragSlider(wrapSel, trackId) {
     track.style.transform = 'translateX(-' + posX + 'px)';
     updateFade();
   }
-  function onDown(e) {
-    if (e.pointerType !== undefined) { wrap.setPointerCapture(e.pointerId); }
+  function onMouseDown(e) {
     isDragging = true;
-    isHorizontal = null;
     wrap.classList.add('is-dragging');
-    startX = e.touches ? e.touches[0].clientX : e.clientX;
-    startY = e.touches ? e.touches[0].clientY : e.clientY;
+    startX = e.clientX;
     startPos = posX;
     velX = 0;
     lastX = startX;
     lastT = Date.now();
     if (raf) { cancelAnimationFrame(raf); raf = null; }
     track.style.transition = 'none';
+    e.preventDefault();
   }
-  var isHorizontal = null;
-  var startY = 0;
-  function onMove(e) {
+  function onMouseMove(e) {
     if (!isDragging) return;
-    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    var clientY = e.touches ? e.touches[0].clientY : e.clientY;
-    if (e.touches && isHorizontal === null) {
-      var dx = Math.abs(clientX - startX);
-      var dy = Math.abs(clientY - startY);
-      if (dx < 8 && dy < 8) return;
-      isHorizontal = dx > dy;
-      if (!isHorizontal) { isDragging = false; wrap.classList.remove('is-dragging'); return; }
-    }
-    if (!isHorizontal && e.touches) return;
-    if (e.cancelable && isHorizontal) e.preventDefault();
     var now = Date.now();
-    velX = Math.max(-8, Math.min(8, (lastX - clientX) / Math.max(1, now - lastT) * 16));
-    lastX = clientX;
+    velX = Math.max(-8, Math.min(8, (lastX - e.clientX) / Math.max(1, now - lastT) * 16));
+    lastX = e.clientX;
     lastT = now;
-    setPos(startPos + (startX - clientX));
+    setPos(startPos + (startX - e.clientX));
   }
-  function onUp() {
+  function onMouseUp() {
     if (!isDragging) return;
     isDragging = false;
     wrap.classList.remove('is-dragging');
@@ -1262,14 +1247,57 @@ function makeDragSlider(wrapSel, trackId) {
     }
     raf = requestAnimationFrame(momentum);
   }
-  wrap.addEventListener('pointerdown', onDown);
-  wrap.addEventListener('pointermove', onMove);
-  wrap.addEventListener('pointerup', onUp);
-  wrap.addEventListener('pointercancel', onUp);
-  wrap.addEventListener('touchstart', onDown, {passive: true});
-  wrap.addEventListener('touchmove', onMove, {passive: false});
-  wrap.addEventListener('touchend', onUp);
-  wrap.addEventListener('touchcancel', onUp);
+  var isHorizontal = null;
+  var startY = 0;
+  function onTouchStart(e) {
+    isHorizontal = null;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+    startPos = posX;
+    velX = 0;
+    lastX = startX;
+    lastT = Date.now();
+    if (raf) { cancelAnimationFrame(raf); raf = null; }
+    track.style.transition = 'none';
+  }
+  function onTouchMove(e) {
+    var clientX = e.touches[0].clientX;
+    var clientY = e.touches[0].clientY;
+    if (isHorizontal === null) {
+      var dx = Math.abs(clientX - startX), dy = Math.abs(clientY - startY);
+      if (dx < 8 && dy < 8) return;
+      isHorizontal = dx > dy;
+    }
+    if (!isHorizontal) return;
+    if (e.cancelable) e.preventDefault();
+    var now = Date.now();
+    velX = Math.max(-8, Math.min(8, (lastX - clientX) / Math.max(1, now - lastT) * 16));
+    lastX = clientX; lastT = now;
+    isDragging = true;
+    setPos(startPos + (startX - clientX));
+  }
+  function onTouchEnd() {
+    if (!isDragging) return;
+    isDragging = false;
+    wrap.classList.remove('is-dragging');
+    var v = velX;
+    function momentum() {
+      if (Math.abs(v) < 0.5) return;
+      v *= 0.92;
+      var next = posX + v;
+      if (next <= 0 || next >= maxScroll()) v = 0;
+      setPos(next);
+      raf = requestAnimationFrame(momentum);
+    }
+    raf = requestAnimationFrame(momentum);
+  }
+  wrap.addEventListener('mousedown', onMouseDown);
+  document.addEventListener('mousemove', onMouseMove);
+  document.addEventListener('mouseup', onMouseUp);
+  wrap.addEventListener('touchstart', onTouchStart, {passive: true});
+  wrap.addEventListener('touchmove', onTouchMove, {passive: false});
+  wrap.addEventListener('touchend', onTouchEnd);
+  wrap.addEventListener('touchcancel', onTouchEnd);
   track.addEventListener('click', function(e) {
     if (Math.abs(posX - startPos) > 8) e.stopPropagation();
   }, true);
