@@ -114,6 +114,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .hero-buttons{display:flex;gap:1rem;align-items:center;margin-bottom:3rem}
 .btn-accent{background:var(--btn);color:#fff;padding:.9rem 2rem;border-radius:100px;font-size:.9rem;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,transform .15s,box-shadow .2s;font-family:var(--sans);border:none;cursor:pointer}
 .btn-accent:hover{background:var(--btn2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,135,10,.25)}
+.btn-accent:focus-visible,.nav-cta:focus-visible,.cta-main-btn:focus-visible,.form-submit:focus-visible{outline:3px solid var(--btn);outline-offset:3px}
 .btn-ghost2{color:var(--ink);font-size:.9rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:gap .2s;cursor:pointer;background:none;border:none;font-family:var(--sans)}
 .btn-ghost2:hover{gap:.7rem}
 .btn-ghost2::after{content:'→'}
@@ -154,7 +155,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .portfolio{padding:6rem 6%}
 .portfolio-inner{max-width:1200px;margin:0 auto}
 .portfolio-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
-.portfolio-slider-wrap{position:relative;overflow-x:auto;overflow-y:hidden;cursor:grab;user-select:none;padding-right:80px;scrollbar-width:none}
+.portfolio-slider-wrap{position:relative;overflow-x:auto;overflow-y:hidden;cursor:grab;user-select:none;padding-right:80px;scrollbar-width:none;touch-action:pan-y}
 .portfolio-slider-wrap::-webkit-scrollbar{display:none}.portfolio-slider-wrap.is-dragging{cursor:grabbing}
 .portfolio-slider-wrap.has-more::after{content:'';position:absolute;right:0;top:0;bottom:0;width:120px;background:linear-gradient(to left,var(--bg) 0%,transparent 100%);pointer-events:none;z-index:2;transition:opacity .3s}
 .portfolio-slider-wrap:not(.has-more)::after{opacity:0}
@@ -239,7 +240,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .testimonials{padding:6rem 6%;background:var(--warm)}
 .testimonials-inner{max-width:1200px;margin:0 auto}
 .testimonials-header{margin-bottom:3rem}
-.testimonials-carousel{position:relative;overflow-x:auto;overflow-y:hidden;cursor:grab;user-select:none;width:100%;padding-right:80px;scrollbar-width:none}
+.testimonials-carousel{position:relative;overflow-x:auto;overflow-y:hidden;cursor:grab;user-select:none;width:100%;padding-right:80px;scrollbar-width:none;touch-action:pan-y}
 .testimonials-carousel::-webkit-scrollbar{display:none}.testimonials-carousel.is-dragging{cursor:grabbing}
 .testimonials-carousel.has-more::after{content:'';position:absolute;right:0;top:0;bottom:0;width:120px;background:linear-gradient(to left,var(--warm) 30%,transparent 100%);pointer-events:none;z-index:2;transition:opacity .3s}
 .testimonials-carousel:not(.has-more)::after{opacity:0}
@@ -1188,7 +1189,7 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
     <div id="formContent">
       <h2>Poptejte projekt</h2>
       <p>Vyplňte základní informace a já se vám ozvu do 24 hodin s nezávaznou nabídkou a návrhem dalšího postupu.</p>
-      <form onsubmit="submitForm(event)" action="https://formspree.io/f/info@michalkubik.cz" method="POST">
+      <form onsubmit="submitForm(event)" action="https://formspree.io/f/xeevakbe" method="POST">
         <div class="form-row">
           <div class="form-group">
             <label>Jméno a příjmení *</label>
@@ -2043,7 +2044,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
 
 
 <div id="cookie-banner" style="display:none">
-  <p>Používám cookies pro analýzu návštěvnosti (Google Analytics). Žádné osobní údaje nejsou sdíleny třetím stranám.</p>
+  <p>Používám cookies pro analýzu návštěvnosti (Google Analytics). Žádné osobní údaje nejsou sdíleny třetím stranám. <a href="/privacy.html" target="_blank">Zásady ochrany soukromí</a></p>
   <div class="cookie-btns">
     <button class="c-decline" onclick="cookieDecline()">Odmítnout</button>
     <button class="c-accept" onclick="cookieAccept()">Přijmout</button>
