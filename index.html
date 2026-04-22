@@ -3,13 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KXRLMX61TZ"></script>
+<!-- Google Analytics — načte se jen po souhlasu s cookies -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-KXRLMX61TZ');
+  gtag('consent','default',{analytics_storage:'denied'});
+  function loadAnalytics(){
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=G-KXRLMX61TZ';
+    document.head.appendChild(s);
+    gtag('js',new Date());
+    gtag('config','G-KXRLMX61TZ');
+    gtag('consent','update',{analytics_storage:'granted'});
+  }
+  if(localStorage.getItem('cookie_consent')==='yes') loadAnalytics();
 </script>
 <title>Michal Kubík | Branding & Vizuální identity</title>
 <meta name="description" content="Navrhuju loga a vizuální identity pro firmy, které chtějí růst a působit profesionálně. Spolupracujte přímo se mnou, bez prostředníků, od návrhu po realizaci.">
@@ -575,6 +583,16 @@ footer{background:var(--ink);padding:3.5rem 6% 2rem}
 .slider-nav-arrow.arrow-left.visible{opacity:1;pointer-events:all}
 .slider-nav-arrow.arrow-right{right:-20px;transition:opacity .25s}
 .slider-wrapper{position:relative;padding:0 8px}
+/* Cookie banner */
+#cookie-banner{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:9999;background:var(--navy);color:#fff;border-radius:16px;padding:1rem 1.25rem;display:flex;align-items:center;gap:1rem;box-shadow:0 8px 40px rgba(0,0,0,.25);max-width:680px;width:calc(100% - 2rem);font-family:var(--sans);font-size:.85rem;line-height:1.5;border:1px solid rgba(255,255,255,.08)}
+#cookie-banner p{margin:0;color:rgba(255,255,255,.8);flex:1}
+#cookie-banner a{color:var(--accentL);text-underline-offset:3px}
+#cookie-banner .cookie-btns{display:flex;gap:.6rem;flex-shrink:0}
+#cookie-banner .c-accept{background:var(--btn);color:#fff;border:none;padding:.5rem 1.1rem;border-radius:100px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:var(--sans);white-space:nowrap}
+#cookie-banner .c-decline{background:transparent;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.2);padding:.5rem 1.1rem;border-radius:100px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:var(--sans);white-space:nowrap}
+#cookie-banner .c-accept:hover{background:var(--btn2)}
+#cookie-banner .c-decline:hover{color:#fff;border-color:rgba(255,255,255,.5)}
+@media(max-width:600px){#cookie-banner{flex-direction:column;align-items:flex-start;bottom:.75rem}#cookie-banner .cookie-btns{width:100%}#cookie-banner .c-accept,#cookie-banner .c-decline{flex:1;text-align:center}}
 </style>
 </head>
 <body>
@@ -2024,5 +2042,28 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePopup();closeF
 </div>
 
 
+<div id="cookie-banner" style="display:none">
+  <p>Používám cookies pro analýzu návštěvnosti (Google Analytics). Žádné osobní údaje nejsou sdíleny třetím stranám.</p>
+  <div class="cookie-btns">
+    <button class="c-decline" onclick="cookieDecline()">Odmítnout</button>
+    <button class="c-accept" onclick="cookieAccept()">Přijmout</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('cookie_consent')){
+    document.getElementById('cookie-banner').style.display='flex';
+  }
+})();
+function cookieAccept(){
+  localStorage.setItem('cookie_consent','yes');
+  document.getElementById('cookie-banner').style.display='none';
+  loadAnalytics();
+}
+function cookieDecline(){
+  localStorage.setItem('cookie_consent','no');
+  document.getElementById('cookie-banner').style.display='none';
+}
+</script>
 </body>
 </html>
